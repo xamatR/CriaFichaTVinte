@@ -273,14 +273,6 @@ public class Personagem {
         this.carisma = carisma;
     }
 
-    public int getDefesa() {
-        return defesa;
-    }
-
-    public void setDefesa(int defesa) {
-        this.defesa = defesa;
-    }
-
     public int getModForca() {
         return modForca;
     }
