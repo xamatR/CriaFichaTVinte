@@ -5,6 +5,7 @@ public class Personagem {
 
     private String nome;
     private String classe;
+    private String raca;
     private String origem;
     private String divindade;
     private int nivel;
@@ -24,6 +25,12 @@ public class Personagem {
     private int modInteligencia;
     private int modSabedoria;
     private int modCarisma;
+
+    //Lista de poderes por classe ,raça e origem
+    String poderesClasse;
+    String poderesRaca;
+    String poderesOrigem;
+    String poderesDivindade;
 
 /*
     //pericias
@@ -88,16 +95,14 @@ public class Personagem {
     private boolean tSobrevivencia;
     private boolean tVontade;
 */
-    public Personagem(String nome, String classe, String origem, String divindade, int nivel,
-                      int pontosvida, int pontosMana, int forca, int destreza, int constituição,
+    public Personagem(String nome, String classe,String raca, String origem, String divindade, int forca, int destreza, int constituição,
                       int inteligencia, int sabedoria, int carisma) {
         this.nome = nome;
         this.classe = classe;
+        this.raca= raca;
         this.origem = origem;
         this.divindade = divindade;
-        this.nivel = nivel;
-        this.pontosvida = pontosvida;
-        this.pontosMana = pontosMana;
+        this.nivel = 1;
         this.forca = forca;
         this.destreza = destreza;
         this.constituição = constituição;
@@ -110,6 +115,12 @@ public class Personagem {
         this.modInteligencia = calculaModificador(inteligencia);
         this.modSabedoria = calculaModificador(sabedoria);
         this.modCarisma = calculaModificador(carisma);
+        calculaVidaInicial();
+        calculaManaInicial();
+        setPoderesClasse();
+        setPoderesRaca();
+        setPoderesOrigem();
+        setPoderesDivindade();
     }
 /*
     protected void setPericias(){
@@ -142,31 +153,372 @@ public class Personagem {
        this.religiao = setadorDePericia(istReligiao());
        this.sobrevivencia = setadorDePericia(istSobrevivencia());
        this.vontade = setadorDePericia(istVontade());
-
     }
 
     protected int setadorDePericia(boolean treinada){
         int pericia=0;
-        if(treinada && this.nivel%2==0) {
-            return pericia = (nivel/2)+2;
+        if(treinada){
+            if (this.nivel%2==0){
+                return pericia = (nivel/2)+2;
+            }else{
+                return pericia = (nivel/2)+1;
+            }
         } else {
-            return pericia = (nivel/2)+1;
-        } if (treinada ){
-            return pericia= (nivel/2)-1;
+            if (this.nivel%2==0){
+                return pericia = (nivel/2);
+            }else{
+                return pericia = (nivel/2);
+            }
         }
-    }
-*/
+    }*/
 
     protected int calculaModificador(int atributo){
         int modficador=valorModificadores[atributo+1];
         return modficador;
     };
 
-
-
-    public static int[] getValorModificadores() {
-        return valorModificadores;
+    protected void calculaVidaInicial(){
+        switch (this.classe){
+            case "Arcanista Mago":
+            case "Arcanista Bruxo":
+            case "Arcanista Feiriceiro":
+                this.pontosvida = 8+this.modConstituição;
+                break;
+            case "Barbaro":
+                this.pontosvida = 24+this.modConstituição;
+                break;
+            case "Bardo":
+                this.pontosvida = 12+this.modConstituição;
+                break;
+            case "Bucaneiro":
+                this.pontosvida = 16+this.modConstituição;
+                break;
+            case "Caçador":
+                this.pontosvida = 16+this.modConstituição;
+                break;
+            case "Cavaleiro":
+                this.pontosvida = 20+this.modConstituição;
+                break;
+            case "Clerigo":
+                this.pontosvida = 16+this.modConstituição;
+                break;
+            case "Druida":
+                this.pontosvida = 16+this.modConstituição;
+                break;
+            case "Guerreiro":
+                this.pontosvida = 20+this.modConstituição;
+                break;
+            case "Inventor":
+                this.pontosvida = 12+this.modConstituição;
+                break;
+            case "Ladino":
+                this.pontosvida = 12+this.modConstituição;
+                break;
+            case "Lutador":
+                this.pontosvida = 20+this.modConstituição;
+                break;
+            case "Nobre":
+                this.pontosvida = 16+this.modConstituição;
+                break;
+            case "Paladino":
+                this.pontosvida = 20+this.modConstituição;
+                break;
+            default:
+                this.pontosvida = 0;
+        }
     }
+    protected void calculaManaInicial(){
+        switch (this.classe){
+            case "Arcanista Mago":
+            case "Arcanista Bruxo":
+                this.pontosMana = 6+this.modInteligencia;
+                break;
+            case "Arcanista Feiriceiro":
+                this.pontosMana = 6+this.modCarisma;
+                break;
+            case "Barbaro":
+                this.pontosMana = 3;
+                break;
+            case "Bardo":
+                this.pontosMana = 4+this.modCarisma;
+                break;
+            case "Bucaneiro":
+                this.pontosMana = 3;
+                break;
+            case "Caçador":
+                this.pontosMana = 4;
+                break;
+            case "Cavaleiro":
+                this.pontosMana = 3;
+                break;
+            case "Clerigo":
+                this.pontosMana = 5+this.modSabedoria;
+                break;
+            case "Druida":
+                this.pontosMana = 4+this.modSabedoria;
+                break;
+            case "Guerreiro":
+                this.pontosMana = 3;
+                break;
+            case "Inventor":
+                this.pontosMana = 4;
+                break;
+            case "Ladino":
+                this.pontosMana = 4;
+                break;
+            case "Lutador":
+                this.pontosMana = 3;
+                break;
+            case "Nobre":
+                this.pontosMana = 4;
+                break;
+            case "Paladino":
+                this.pontosMana = 3+this.modCarisma;
+                break;
+            default:
+                this.pontosMana = 0;
+                break;
+        }
+    }
+
+
+    protected void setPoderesClasse(){
+        switch (this.classe){
+            case "Arcanista Mago":
+            case "Arcanista Bruxo":
+            case "Arcanista Feiriceiro":
+                this.poderesClasse = "Caminho do Arcanista, Magias (pg37)";
+                break;
+            case "Barbaro":
+                this.poderesClasse = "Fúria (pg41)";
+                break;
+            case "Bardo":
+                this.poderesClasse = "Inspiração, Magias (pg44)";
+                break;
+            case "Bucaneiro":
+                this.poderesClasse = "Audácia, Insolência (pg41)";
+                break;
+            case "Caçador":
+                this.poderesClasse = "Marca da presa, Rastreador (pg50)";
+                break;
+            case "Cavaleiro":
+                this.poderesClasse = "Baluarte, Código de honra (pg53)";
+                break;
+            case "Clerigo":
+                this.poderesClasse = "Devoto, Magias (pg57)";
+                break;
+            case "Druida":
+                this.poderesClasse = "Devoto, Empatia selvagem, Magias (pg62)";
+                break;
+            case "Guerreiro":
+                this.poderesClasse = "Ataque especial (pg66)";
+                break;
+            case "Inventor":
+                this.poderesClasse = "Engenhosidade, Protótipo (pg68)";
+                break;
+            case "Ladino":
+                this.poderesClasse = "Ataque furtivo ,Especialista (pg73)";
+                break;
+            case "Lutador":
+                this.poderesClasse = "Briga, Golpe relâmpago (pg76)";
+                break;
+            case "Nobre":
+                this.poderesClasse = "Autoconfiança, Espólio, Orgulho (pg79)";
+                break;
+            case "Paladino":
+                this.poderesClasse = "Abençoado, código do herói,golpe divino (pg82)";
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + this.classe);
+        }
+    }
+
+    protected void setPoderesRaca(){
+        switch (this.raca){
+            case "Humano":
+                this.poderesRaca = "+2 em Três Atributods Diferentes, Versátil (pg19)";
+                break;
+            case "Anão":
+                this.poderesRaca = " Constituição +4, Sabedoria +2, Destreza –2 ,Conhecimento das Rochas,Devagar e Sempre, Duro como Pedra, Tradição de Heredrimm (pg20)";
+                break;
+            case "Dahllan":
+                this.poderesRaca = "Sabedoria +4, Destreza +2, Inteligência –2, Amiga das Plantas, Armadura de Allihanna, Empatia Selvagem (pg21)";
+                break;
+            case "Elfo":
+                this.poderesRaca = "Inteligência +4, Destreza +2,Constituição –2, Graça de Glórienn, Herança Feérica, Sentidos Élficos (pg22)";
+                break;
+            case "Goblin":
+                this.poderesRaca = "Destreza +4, Inteligência +2, Carisma –2, Engenhoso ,Espelunqueiro, Peste esguia , Rato das Ruas (pg23)";
+                break;
+            case "Lefou":
+                this.poderesRaca = "+2 em Três Atributos Diferentes(exceto Carisma), Carisma –2, Cria da Tormenta, Deformidade (pg24)";
+                break;
+            case "Minotauro":
+                this.poderesRaca = "Força +4, Constituição +2, Sabedoria –2, Chifres, Couro Rígido, Faro , Medo de Altura (pg25)";
+                break;
+            case "Qareen":
+                this.poderesRaca = "Carisma +4, Inteligência +2, Sabedoria –2, Desejos, Resistência Elemental, Tatuagem Mística (pg26)";
+                break;
+            case "Golem":
+                this.poderesRaca = "Força +4, Constituição +2,Carisma –2, Canalizar Reparos, Chassi, Criatura Artificial, Espírito Elemental, Sem Origem (pg27)";
+                break;
+            case "Hynne":
+                this.poderesRaca = "Destreza +4, Carisma +2, Força –2, Arremessador, Pequeno e Rechonchudo, Sorte Salvadora (pg27-28)";
+                break;
+            case "Kliren":
+                this.poderesRaca = "Inteligência +4, Carisma +2, Força –2,Híbrido , Lógica Gnômica, Ossos Frágeis, Vanguardista (pg28)";
+                break;
+            case "Medusa":
+                this.poderesRaca = "Destreza +4, Carisma +2 ,Cria de Megalokk, Natureza Venenosa, Olhar Atordoandte (pg28-29)";
+                break;
+            case "Osteon":
+                this.poderesRaca = "+2 em Três Atributos Diferentes (exceto Constituição),Constituição –2, Armadura Óssea,Memória Póstuma, Natureza Esquelética, Preço da Não Vida (pg29)";
+                break;
+            case "Sereia/tritão":
+                this.poderesRaca = "+2 em Três Atributos Diferentes , Canção dos Mares, Mestre do Tridente , Transformação Anfíbia (pg29-30)";
+                break;
+            case "Sílfide":
+                this.poderesRaca = "Carisma +4, Destreza +2, Força –4, Asas de Borboleta, Espírito da Natureza , Magia das Fadas (pg30)";
+                break;
+            case "Aggelus":
+                this.poderesRaca = "Sabedoria +4, Carisma +2 , Herança Divina, Luz Sagrada (pg30-31)";
+                break;
+            case "Sulfure":
+                this.poderesRaca = "Destreza +4, Inteligência +2, Herança Divina, Sombras Profanas (pg30-31)";
+                break;
+            case "Trog":
+                this.poderesRaca = "Constituição +4, Força +2, Inteligência –2 , Mau Cheiro, Mordida , Reptiliano, Sangue Frio (pg31)";
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + this.raca);
+        }
+    }
+
+    protected void setPoderesOrigem() {
+        this.poderesOrigem="Escolha dois dos seguintes benefícios: ";
+        switch ( this.origem ) {
+            case "Acólito":
+                this.poderesOrigem+="Cura, Religião, Vontade; Medicina, Membro da Igreja, Vontade de Ferro. (pg86)";
+                break;
+            case "Amigo dos Animais":
+                this.poderesOrigem+="Cura, Religião, Vontade; Medicina, Membro da Igreja, Vontade de Ferro. (pg86)";
+                break;
+            case "Amnésico":
+                this.poderesOrigem="Em vez de dois benefícios de uma lista, você recebe uma perícia e um poder escolhidos pelo mestre e o poder Lembranças Graduais. (pg86)";
+                break;
+            case "Aristocrata":
+                this.poderesOrigem+="Diplomacia, Enganação, Nobreza ; Comandar, Sangue Azul. (pg86)";
+                break;
+            case "Artesão":
+                this.poderesOrigem+="Ofício, Vontade; Frutos do Trabalho, Sortudo. (pg86)";
+                break;
+            case "Artista":
+                this.poderesOrigem+="Atuação, Enganação; Atraente, Dom Artístico, Sortudo, Torcida. (pg86-87)";
+                break;
+            case "Assistente de Laboratório":
+                this.poderesOrigem+="Ofício (alquimia), Misticismo; Esse Cheiro..., Venefício, um poder da Tormenta a sua escolha. (pg87-88)";
+                break;
+            case "Batedor":
+                this.poderesOrigem+=" Furtividade, Percepção, Sobrevivência; À Prova de Tudo, Estilo de Disparo, Sentidos Aguçados. (pg88)";
+                break;
+            case "Capanga":
+                this.poderesOrigem+="Luta, Intimidação; Confissão, um poder de combate a sua escolha . (pg88)";
+                break;
+            case "Charlatão":
+                this.poderesOrigem+="Enganação, Jogatina; Alpinista Social, Aparência Inofensiva, Sortudo. (pg88-89)";
+                break;
+            case "Circense":
+                this.poderesOrigem+="Acrobacia, Atuação, Reflexos; Acrobático, Torcida, Truque de Mágica. (pg90)";
+                break;
+            case "Criminoso":
+                this.poderesOrigem+="Enganação, Furtividade, Ladinagem; Punguista, Venefício. (pg90)";
+                break;
+            case "Curandeiro":
+                this.poderesOrigem+="Cura, Vontade; Medicina, Médico de Campo, Venefício. (pg90)";
+                break;
+            case "Eremita":
+                this.poderesOrigem+="Misticismo, Religião, Sobrevivência; Busca Interior, Lobo Solitário. (pg90)";
+                break;
+            case "Escravo":
+                this.poderesOrigem+="Atletismo, Fortitude, Furtividade; Desejo de Liberdade, Vitalidade. (pg90-91)";
+                break;
+            case "Estudioso":
+                this.poderesOrigem+="Conhecimento, Guerra, Misticismo; Aparência Inofensiva, Palpite Fundamentado. (pg91)";
+                break;
+            case "Fazendeiro":
+                this.poderesOrigem+="Adestramento, Cavalgar, Ofício (fazendeiro), Sobrevivência; Água no Feijão, Ginete. (pg91)";
+                break;
+            case "Forasteiro":
+                this.poderesOrigem+="Cavalgar, Pilotagem, Sobrevivência; Cultura Exótica, Lobo Solitário. (pg91)";
+                break;
+            case "Gladiador":
+                this.poderesOrigem+="Atuação, Luta; Atraente, Pão e Circo, Torcida, um poder de combate a sua escolha. (pg91-92)";
+                break;
+            case "Guarda":
+                this.poderesOrigem+="Investigação, Luta, Percepção; Detetive, Investigador, um poder de combate a sua escolha. (pg92)";
+                break;
+            case "Herdeiro":
+                this.poderesOrigem+="Misticismo, Nobreza, Ofício; Comandar, Herança. (pg92)";
+                break;
+            case "Herói Camponês":
+                this.poderesOrigem+="Adestramento, Ofício ;Amigo dos Plebeus, Sortudo, Surto Heroico, Torcida(pg92-93)";
+                break;
+            case "Marujo":
+                this.poderesOrigem+="Atletismo, Jogatina, Pilotagem; Acrobático, Passagem de Navio. (pg93)";
+                break;
+            case "Mateiro":
+                this.poderesOrigem+="Atletismo, Furtividade, Sobrevivência; Lobo Solitário, Sentidos Aguçados, Vendedor de Carcaças. (pg93)";
+                break;
+            case "Membro de Guilda":
+                this.poderesOrigem+="Diplomacia, Enganação, Misticismo, Ofício; Foco em Perícia, Rede de Contatos. (pg93)";
+                break;
+            case "Mercador":
+                this.poderesOrigem+="Diplomacia, Intuição, Ofício; Negociação, Proficiência, Sortudo. (pg94)";
+                break;
+            case "Minerador":
+                this.poderesOrigem+="Atletismo, Fortitude, Ofício (minerador); Ataque Poderoso, Escavador, Sentidos Aguçados. (pg94)";
+                break;
+            case "Nômade":
+                this.poderesOrigem+="Cavalgar, Pilotagem, Sobrevivência; Lobo Solitário, Mochileiro, Sentidos Aguçados. (pg94)";
+                break;
+            case "Pivete":
+                this.poderesOrigem+="Furtividade, Iniciativa, Ladinagem; Acrobático, Aparência Inofensiva, Quebra-Galho. (pg94)";
+                break;
+            case "Refugiado":
+                this.poderesOrigem+="Fortitude, Reflexos, Vontade; Estoico, Vontade de Ferro. (pg94-95)";
+                break;
+            case "Seguidor":
+                this.poderesOrigem+="Adestramento, Ofício; Antigo Mestre, Proficiência, Surto Heroico. (pg95)";
+                break;
+            case "Selvagem":
+                this.poderesOrigem+="Percepção, Reflexos, Sobrevivência; Lobo Solitário, Vida Rústica, Vitalidade. (pg95)";
+                break;
+            case "Soldado":
+                this.poderesOrigem+="Fortitude, Guerra, Luta, Pontaria; Influência Militar, um poder de combate a sua escolha. (pg95)";
+                break;
+            case "Taverneiro":
+                this.poderesOrigem+="Diplomacia, Jogatina, Ofício (culinária); Gororoba, Proficiência, Vitalidade. (pg95-96)";
+                break;
+            case "Trabalhador":
+                this.poderesOrigem+="Atletismo, Fortitude; Atlético, Esforçado. (pg96)";
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + this.origem);
+        }
+
+    }
+
+    protected void setPoderesDivindade(){
+        if (this.divindade!= null){
+
+        }
+        else {
+            this.poderesDivindade="Não segue a nenhuma divindade.";
+        }
+
+    }
+
+
 
     public String getNome() {
         return nome;
