@@ -157,7 +157,6 @@ public class Personagem {
     }
 */
 
-
     protected int calculaModificador(int atributo){
         int modficador=valorModificadores[atributo+1];
         return modficador;
