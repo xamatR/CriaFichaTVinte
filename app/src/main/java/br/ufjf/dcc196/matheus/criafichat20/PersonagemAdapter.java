@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,9 +14,11 @@ import java.util.List;
 
 public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.PersonagemViewHolder>{
     private final List<Personagem> fichas;
+    private OnPersonagemClickListener listener;
 
-    public PersonagemAdapter(List<Personagem> fichas) {
+    public PersonagemAdapter(List<Personagem> fichas, OnPersonagemClickListener listener) {
         this.fichas = fichas;
+        this.listener= listener;
     }
 
     @Override
@@ -65,6 +68,12 @@ public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.Pe
             textViewDivindade = itemView.findViewById(R.id.textViewDivindade);
             textViewPvEdit = itemView.findViewById(R.id.textViewPvEdit);
             textViewPmEdit = itemView.findViewById(R.id.textViewPmEdit);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    listener.onPersonagemClick(itemView,getAdapterPosition());
+                }
+            });
         }
     }
 

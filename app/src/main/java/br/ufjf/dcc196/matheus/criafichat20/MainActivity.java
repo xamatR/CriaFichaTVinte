@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
         recyclerViewFichas = findViewById(R.id.recyclerViewFichas);
         layoutManager = new LinearLayoutManager(this);
         recyclerViewFichas.setLayoutManager(layoutManager);
-        pesonagemAdapter= new PersonagemAdapter(fichas);
+        pesonagemAdapter= new PersonagemAdapter(fichas,this);
         recyclerViewFichas.setAdapter(pesonagemAdapter);
         buttonCria=findViewById(R.id.buttonCria);
     }
