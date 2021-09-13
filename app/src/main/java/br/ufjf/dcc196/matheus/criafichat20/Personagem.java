@@ -397,115 +397,119 @@ public class Personagem {
     }
 
     protected void setPoderesOrigem() {
-        this.poderesOrigem="Escolha dois dos seguintes benefícios: ";
-        switch ( this.origem ) {
-            case "Acólito":
-                this.poderesOrigem+="Cura, Religião, Vontade; Medicina, Membro da Igreja, Vontade de Ferro. (pg86)";
-                break;
-            case "Amigo dos Animais":
-                this.poderesOrigem+="Cura, Religião, Vontade; Medicina, Membro da Igreja, Vontade de Ferro. (pg86)";
-                break;
-            case "Amnésico":
-                this.poderesOrigem="Em vez de dois benefícios de uma lista, você recebe uma perícia e um poder escolhidos pelo mestre e o poder Lembranças Graduais. (pg86)";
-                break;
-            case "Aristocrata":
-                this.poderesOrigem+="Diplomacia, Enganação, Nobreza ; Comandar, Sangue Azul. (pg86)";
-                break;
-            case "Artesão":
-                this.poderesOrigem+="Ofício, Vontade; Frutos do Trabalho, Sortudo. (pg86)";
-                break;
-            case "Artista":
-                this.poderesOrigem+="Atuação, Enganação; Atraente, Dom Artístico, Sortudo, Torcida. (pg86-87)";
-                break;
-            case "Assistente de Laboratório":
-                this.poderesOrigem+="Ofício (alquimia), Misticismo; Esse Cheiro..., Venefício, um poder da Tormenta a sua escolha. (pg87-88)";
-                break;
-            case "Batedor":
-                this.poderesOrigem+=" Furtividade, Percepção, Sobrevivência; À Prova de Tudo, Estilo de Disparo, Sentidos Aguçados. (pg88)";
-                break;
-            case "Capanga":
-                this.poderesOrigem+="Luta, Intimidação; Confissão, um poder de combate a sua escolha . (pg88)";
-                break;
-            case "Charlatão":
-                this.poderesOrigem+="Enganação, Jogatina; Alpinista Social, Aparência Inofensiva, Sortudo. (pg88-89)";
-                break;
-            case "Circense":
-                this.poderesOrigem+="Acrobacia, Atuação, Reflexos; Acrobático, Torcida, Truque de Mágica. (pg90)";
-                break;
-            case "Criminoso":
-                this.poderesOrigem+="Enganação, Furtividade, Ladinagem; Punguista, Venefício. (pg90)";
-                break;
-            case "Curandeiro":
-                this.poderesOrigem+="Cura, Vontade; Medicina, Médico de Campo, Venefício. (pg90)";
-                break;
-            case "Eremita":
-                this.poderesOrigem+="Misticismo, Religião, Sobrevivência; Busca Interior, Lobo Solitário. (pg90)";
-                break;
-            case "Escravo":
-                this.poderesOrigem+="Atletismo, Fortitude, Furtividade; Desejo de Liberdade, Vitalidade. (pg90-91)";
-                break;
-            case "Estudioso":
-                this.poderesOrigem+="Conhecimento, Guerra, Misticismo; Aparência Inofensiva, Palpite Fundamentado. (pg91)";
-                break;
-            case "Fazendeiro":
-                this.poderesOrigem+="Adestramento, Cavalgar, Ofício (fazendeiro), Sobrevivência; Água no Feijão, Ginete. (pg91)";
-                break;
-            case "Forasteiro":
-                this.poderesOrigem+="Cavalgar, Pilotagem, Sobrevivência; Cultura Exótica, Lobo Solitário. (pg91)";
-                break;
-            case "Gladiador":
-                this.poderesOrigem+="Atuação, Luta; Atraente, Pão e Circo, Torcida, um poder de combate a sua escolha. (pg91-92)";
-                break;
-            case "Guarda":
-                this.poderesOrigem+="Investigação, Luta, Percepção; Detetive, Investigador, um poder de combate a sua escolha. (pg92)";
-                break;
-            case "Herdeiro":
-                this.poderesOrigem+="Misticismo, Nobreza, Ofício; Comandar, Herança. (pg92)";
-                break;
-            case "Herói Camponês":
-                this.poderesOrigem+="Adestramento, Ofício ;Amigo dos Plebeus, Sortudo, Surto Heroico, Torcida(pg92-93)";
-                break;
-            case "Marujo":
-                this.poderesOrigem+="Atletismo, Jogatina, Pilotagem; Acrobático, Passagem de Navio. (pg93)";
-                break;
-            case "Mateiro":
-                this.poderesOrigem+="Atletismo, Furtividade, Sobrevivência; Lobo Solitário, Sentidos Aguçados, Vendedor de Carcaças. (pg93)";
-                break;
-            case "Membro de Guilda":
-                this.poderesOrigem+="Diplomacia, Enganação, Misticismo, Ofício; Foco em Perícia, Rede de Contatos. (pg93)";
-                break;
-            case "Mercador":
-                this.poderesOrigem+="Diplomacia, Intuição, Ofício; Negociação, Proficiência, Sortudo. (pg94)";
-                break;
-            case "Minerador":
-                this.poderesOrigem+="Atletismo, Fortitude, Ofício (minerador); Ataque Poderoso, Escavador, Sentidos Aguçados. (pg94)";
-                break;
-            case "Nômade":
-                this.poderesOrigem+="Cavalgar, Pilotagem, Sobrevivência; Lobo Solitário, Mochileiro, Sentidos Aguçados. (pg94)";
-                break;
-            case "Pivete":
-                this.poderesOrigem+="Furtividade, Iniciativa, Ladinagem; Acrobático, Aparência Inofensiva, Quebra-Galho. (pg94)";
-                break;
-            case "Refugiado":
-                this.poderesOrigem+="Fortitude, Reflexos, Vontade; Estoico, Vontade de Ferro. (pg94-95)";
-                break;
-            case "Seguidor":
-                this.poderesOrigem+="Adestramento, Ofício; Antigo Mestre, Proficiência, Surto Heroico. (pg95)";
-                break;
-            case "Selvagem":
-                this.poderesOrigem+="Percepção, Reflexos, Sobrevivência; Lobo Solitário, Vida Rústica, Vitalidade. (pg95)";
-                break;
-            case "Soldado":
-                this.poderesOrigem+="Fortitude, Guerra, Luta, Pontaria; Influência Militar, um poder de combate a sua escolha. (pg95)";
-                break;
-            case "Taverneiro":
-                this.poderesOrigem+="Diplomacia, Jogatina, Ofício (culinária); Gororoba, Proficiência, Vitalidade. (pg95-96)";
-                break;
-            case "Trabalhador":
-                this.poderesOrigem+="Atletismo, Fortitude; Atlético, Esforçado. (pg96)";
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + this.origem);
+        if (this.raca!="Golen"||this.origem!=null){
+            this.poderesOrigem = "Escolha dois dos seguintes benefícios: ";
+            switch ( this.origem ) {
+                case "Acólito":
+                    this.poderesOrigem += "Cura, Religião, Vontade; Medicina, Membro da Igreja, Vontade de Ferro. (pg86)";
+                    break;
+                case "Amigo dos Animais":
+                    this.poderesOrigem += "Cura, Religião, Vontade; Medicina, Membro da Igreja, Vontade de Ferro. (pg86)";
+                    break;
+                case "Amnésico":
+                    this.poderesOrigem = "Em vez de dois benefícios de uma lista, você recebe uma perícia e um poder escolhidos pelo mestre e o poder Lembranças Graduais. (pg86)";
+                    break;
+                case "Aristocrata":
+                    this.poderesOrigem += "Diplomacia, Enganação, Nobreza ; Comandar, Sangue Azul. (pg86)";
+                    break;
+                case "Artesão":
+                    this.poderesOrigem += "Ofício, Vontade; Frutos do Trabalho, Sortudo. (pg86)";
+                    break;
+                case "Artista":
+                    this.poderesOrigem += "Atuação, Enganação; Atraente, Dom Artístico, Sortudo, Torcida. (pg86-87)";
+                    break;
+                case "Assistente de Laboratório":
+                    this.poderesOrigem += "Ofício (alquimia), Misticismo; Esse Cheiro..., Venefício, um poder da Tormenta a sua escolha. (pg87-88)";
+                    break;
+                case "Batedor":
+                    this.poderesOrigem += " Furtividade, Percepção, Sobrevivência; À Prova de Tudo, Estilo de Disparo, Sentidos Aguçados. (pg88)";
+                    break;
+                case "Capanga":
+                    this.poderesOrigem += "Luta, Intimidação; Confissão, um poder de combate a sua escolha . (pg88)";
+                    break;
+                case "Charlatão":
+                    this.poderesOrigem += "Enganação, Jogatina; Alpinista Social, Aparência Inofensiva, Sortudo. (pg88-89)";
+                    break;
+                case "Circense":
+                    this.poderesOrigem += "Acrobacia, Atuação, Reflexos; Acrobático, Torcida, Truque de Mágica. (pg90)";
+                    break;
+                case "Criminoso":
+                    this.poderesOrigem += "Enganação, Furtividade, Ladinagem; Punguista, Venefício. (pg90)";
+                    break;
+                case "Curandeiro":
+                    this.poderesOrigem += "Cura, Vontade; Medicina, Médico de Campo, Venefício. (pg90)";
+                    break;
+                case "Eremita":
+                    this.poderesOrigem += "Misticismo, Religião, Sobrevivência; Busca Interior, Lobo Solitário. (pg90)";
+                    break;
+                case "Escravo":
+                    this.poderesOrigem += "Atletismo, Fortitude, Furtividade; Desejo de Liberdade, Vitalidade. (pg90-91)";
+                    break;
+                case "Estudioso":
+                    this.poderesOrigem += "Conhecimento, Guerra, Misticismo; Aparência Inofensiva, Palpite Fundamentado. (pg91)";
+                    break;
+                case "Fazendeiro":
+                    this.poderesOrigem += "Adestramento, Cavalgar, Ofício (fazendeiro), Sobrevivência; Água no Feijão, Ginete. (pg91)";
+                    break;
+                case "Forasteiro":
+                    this.poderesOrigem += "Cavalgar, Pilotagem, Sobrevivência; Cultura Exótica, Lobo Solitário. (pg91)";
+                    break;
+                case "Gladiador":
+                    this.poderesOrigem += "Atuação, Luta; Atraente, Pão e Circo, Torcida, um poder de combate a sua escolha. (pg91-92)";
+                    break;
+                case "Guarda":
+                    this.poderesOrigem += "Investigação, Luta, Percepção; Detetive, Investigador, um poder de combate a sua escolha. (pg92)";
+                    break;
+                case "Herdeiro":
+                    this.poderesOrigem += "Misticismo, Nobreza, Ofício; Comandar, Herança. (pg92)";
+                    break;
+                case "Herói Camponês":
+                    this.poderesOrigem += "Adestramento, Ofício ;Amigo dos Plebeus, Sortudo, Surto Heroico, Torcida(pg92-93)";
+                    break;
+                case "Marujo":
+                    this.poderesOrigem += "Atletismo, Jogatina, Pilotagem; Acrobático, Passagem de Navio. (pg93)";
+                    break;
+                case "Mateiro":
+                    this.poderesOrigem += "Atletismo, Furtividade, Sobrevivência; Lobo Solitário, Sentidos Aguçados, Vendedor de Carcaças. (pg93)";
+                    break;
+                case "Membro de Guilda":
+                    this.poderesOrigem += "Diplomacia, Enganação, Misticismo, Ofício; Foco em Perícia, Rede de Contatos. (pg93)";
+                    break;
+                case "Mercador":
+                    this.poderesOrigem += "Diplomacia, Intuição, Ofício; Negociação, Proficiência, Sortudo. (pg94)";
+                    break;
+                case "Minerador":
+                    this.poderesOrigem += "Atletismo, Fortitude, Ofício (minerador); Ataque Poderoso, Escavador, Sentidos Aguçados. (pg94)";
+                    break;
+                case "Nômade":
+                    this.poderesOrigem += "Cavalgar, Pilotagem, Sobrevivência; Lobo Solitário, Mochileiro, Sentidos Aguçados. (pg94)";
+                    break;
+                case "Pivete":
+                    this.poderesOrigem += "Furtividade, Iniciativa, Ladinagem; Acrobático, Aparência Inofensiva, Quebra-Galho. (pg94)";
+                    break;
+                case "Refugiado":
+                    this.poderesOrigem += "Fortitude, Reflexos, Vontade; Estoico, Vontade de Ferro. (pg94-95)";
+                    break;
+                case "Seguidor":
+                    this.poderesOrigem += "Adestramento, Ofício; Antigo Mestre, Proficiência, Surto Heroico. (pg95)";
+                    break;
+                case "Selvagem":
+                    this.poderesOrigem += "Percepção, Reflexos, Sobrevivência; Lobo Solitário, Vida Rústica, Vitalidade. (pg95)";
+                    break;
+                case "Soldado":
+                    this.poderesOrigem += "Fortitude, Guerra, Luta, Pontaria; Influência Militar, um poder de combate a sua escolha. (pg95)";
+                    break;
+                case "Taverneiro":
+                    this.poderesOrigem += "Diplomacia, Jogatina, Ofício (culinária); Gororoba, Proficiência, Vitalidade. (pg95-96)";
+                    break;
+                case "Trabalhador":
+                    this.poderesOrigem += "Atletismo, Fortitude; Atlético, Esforçado. (pg96)";
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + this.origem);
+            }
+        }else {
+            this.poderesOrigem = "Não possui origem";
         }
 
     }
