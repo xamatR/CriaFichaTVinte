@@ -34,69 +34,93 @@ public class Personagem {
     String energiaDivindade;
     String armaDivindade;
 
-/*
-    //pericias
-    private int acrobacia;
-    private int adestramento;
-    private int atletismo;
-    private int atuacao;
-    private int cavalgar;
-    private int conhecimento;
-    private int cura;
-    private int diplomacia;
-    private int enganacao;
-    private int fortitude;
-    private int furtividade;
-    private int guerra;
-    private int iniciativa;
-    private int intimidacao;
-    private int intuicao;
-    private int investigacao;
-    private int jogatina;
-    private int ladinagem;
-    private int luta;
-    private int misticismo;
-    private int nobreza;
-    private int oficio;
-    private int percepcao;
-    private int pilotagem;
-    private int pontaria;
-    private int reflexos;
-    private int religiao;
-    private int sobrevivencia;
-    private int vontade;
+    public String getPoderesClasse() {
+        return poderesClasse;
+    }
 
-    //treinamento em pericia
-    private boolean tAcrobacia;
-    private boolean tAdestramento;
-    private boolean tAtletismo;
-    private boolean tAtuacao;
-    private boolean tCavalgar;
-    private boolean tConhecimento;
-    private boolean tCura;
-    private boolean tDiplomacia;
-    private boolean tEnganação;
-    private boolean tFortitude;
-    private boolean tFurtividade;
-    private boolean tGuerra;
-    private boolean tIniciativa;
-    private boolean tIntimidacao;
-    private boolean tIntuicao;
-    private boolean tInvestigacao;
-    private boolean tJogatina;
-    private boolean tLadinagem;
-    private boolean tLuta;
-    private boolean tMisticismo;
-    private boolean tNobreza;
-    private boolean tOficio;
-    private boolean tPercepcao;
-    private boolean tPilotagem;
-    private boolean tPontaria;
-    private boolean tReflexos;
-    private boolean tReligiao;
-    private boolean tSobrevivencia;
-    private boolean tVontade;
-*/
+    public String getPoderesRaca() {
+        return poderesRaca;
+    }
+
+    public String getPoderesOrigem() {
+        return poderesOrigem;
+    }
+
+    public String getPoderesDivindade() {
+        return poderesDivindade;
+    }
+
+    public String getEnergiaDivindade() {
+        return energiaDivindade;
+    }
+
+    public String getArmaDivindade() {
+        return armaDivindade;
+    }
+
+    /*
+        //pericias
+        private int acrobacia;
+        private int adestramento;
+        private int atletismo;
+        private int atuacao;
+        private int cavalgar;
+        private int conhecimento;
+        private int cura;
+        private int diplomacia;
+        private int enganacao;
+        private int fortitude;
+        private int furtividade;
+        private int guerra;
+        private int iniciativa;
+        private int intimidacao;
+        private int intuicao;
+        private int investigacao;
+        private int jogatina;
+        private int ladinagem;
+        private int luta;
+        private int misticismo;
+        private int nobreza;
+        private int oficio;
+        private int percepcao;
+        private int pilotagem;
+        private int pontaria;
+        private int reflexos;
+        private int religiao;
+        private int sobrevivencia;
+        private int vontade;
+
+        //treinamento em pericia
+        private boolean tAcrobacia;
+        private boolean tAdestramento;
+        private boolean tAtletismo;
+        private boolean tAtuacao;
+        private boolean tCavalgar;
+        private boolean tConhecimento;
+        private boolean tCura;
+        private boolean tDiplomacia;
+        private boolean tEnganação;
+        private boolean tFortitude;
+        private boolean tFurtividade;
+        private boolean tGuerra;
+        private boolean tIniciativa;
+        private boolean tIntimidacao;
+        private boolean tIntuicao;
+        private boolean tInvestigacao;
+        private boolean tJogatina;
+        private boolean tLadinagem;
+        private boolean tLuta;
+        private boolean tMisticismo;
+        private boolean tNobreza;
+        private boolean tOficio;
+        private boolean tPercepcao;
+        private boolean tPilotagem;
+        private boolean tPontaria;
+        private boolean tReflexos;
+        private boolean tReligiao;
+        private boolean tSobrevivencia;
+        private boolean tVontade;
+    */
     public Personagem(String nome, String classe,String raca, String origem, String divindade, int forca, int destreza, int constituição,
                       int inteligencia, int sabedoria, int carisma) {
         this.nome = nome;

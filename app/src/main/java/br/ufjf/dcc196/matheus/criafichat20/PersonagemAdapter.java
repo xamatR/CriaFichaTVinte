@@ -67,4 +67,9 @@ public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.Pe
             textViewPmEdit = itemView.findViewById(R.id.textViewPmEdit);
         }
     }
+
+    public interface OnPersonagemClickListener{
+        void onPersonagemClick(View view, int position);
+    }
 }
+
