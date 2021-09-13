@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8sp">
+
+    <TextView
+        android:id="@+id/textViewPm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pm"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewPmEdit"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPmEdit" />
+
+    <TextView
+        android:id="@+id/textViewNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewRaça"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/textview"
+        app:layout_constraintStart_toStartOf="@+id/textViewNome"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNome" />
+
+    <TextView
+        android:id="@+id/textViewOrigem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/textview"
+        app:layout_constraintStart_toStartOf="@+id/textViewRaça"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRaça" />
+
+    <TextView
+        android:id="@+id/textViewPvEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewRaça"
+        app:layout_constraintEnd_toEndOf="@+id/textViewNome" />
+
+    <TextView
+        android:id="@+id/textViewPmEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewOrigem"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPvEdit" />
+
+    <TextView
+        android:id="@+id/textViewPv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pv"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewPvEdit"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPvEdit" />
+
+    <TextView
+        android:id="@+id/textViewClasse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:text="@string/textview"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:text="@string/barra"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewRaça"
+        app:layout_constraintStart_toEndOf="@+id/textViewRaça" />
+
+    <TextView
+        android:id="@+id/textViewLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:text="@string/textview"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewClasse"
+        app:layout_constraintStart_toEndOf="@+id/textViewClasse" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:text="@string/barra2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewOrigem"
+        app:layout_constraintStart_toEndOf="@+id/textViewOrigem" />
+
+    <TextView
+        android:id="@+id/textViewDivindade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:text="@string/textview"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
+        app:layout_constraintStart_toEndOf="@+id/textView13" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
