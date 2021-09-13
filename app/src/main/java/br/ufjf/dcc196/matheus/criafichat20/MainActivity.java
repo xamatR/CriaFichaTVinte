@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         fichas= new ArrayList<Personagem>(){{
             add(new Personagem("Luna","Clerigo","Humano","Acólito","Tenebra",12,8,14,16,18,16));
-            add(new Personagem("T.E.S.L.A","Barbaro","Golen",null,null,20,14,16,8,8,10));
+            add(new Personagem("T.E.S.L.A","Barbaro","Golen"," "," ",20,14,16,8,8,10));
         }};
         recyclerViewFichas = findViewById(R.id.recyclerViewFichas);
         layoutManager = new LinearLayoutManager(this);

@@ -18,7 +18,6 @@
         android:id="@+id/textViewNome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/textview"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +28,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/textview"
         app:layout_constraintStart_toStartOf="@+id/textViewNome"
         app:layout_constraintTop_toBottomOf="@+id/textViewNome" />
 
@@ -38,7 +36,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/textview"
         app:layout_constraintStart_toStartOf="@+id/textViewRaça"
         app:layout_constraintTop_toBottomOf="@+id/textViewRaça" />
 
@@ -46,7 +43,6 @@
         android:id="@+id/textViewPvEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/textview"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewRaça"
         app:layout_constraintEnd_toEndOf="@+id/textViewNome" />
 
@@ -54,7 +50,6 @@
         android:id="@+id/textViewPmEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/textview"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewOrigem"
         app:layout_constraintEnd_toEndOf="@+id/textViewPvEdit" />
 
@@ -72,7 +67,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
-        android:text="@string/textview"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
         app:layout_constraintStart_toEndOf="@+id/textView11" />
 
@@ -92,7 +86,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
-        android:text="@string/textview"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewClasse"
         app:layout_constraintStart_toEndOf="@+id/textViewClasse" />
 
@@ -102,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
-        android:text="@string/barra2"
+        android:text="@string/barra"
         app:layout_constraintBaseline_toBaselineOf="@+id/textViewOrigem"
         app:layout_constraintStart_toEndOf="@+id/textViewOrigem" />
 
@@ -112,7 +105,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
-        android:text="@string/textview"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
         app:layout_constraintStart_toEndOf="@+id/textView13" />
 

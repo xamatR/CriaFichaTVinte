@@ -175,7 +175,7 @@ public class Personagem {
     }*/
 
     protected int calculaModificador(int atributo){
-        int modficador=valorModificadores[atributo+1];
+        int modficador=valorModificadores[atributo];
         return modficador;
     };
 
@@ -331,7 +331,8 @@ public class Personagem {
                 this.poderesClasse = "Abençoado, código do herói,golpe divino (pg82)";
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + this.classe);
+                this.poderesClasse = " ";
+                break;
         }
     }
 
@@ -392,12 +393,13 @@ public class Personagem {
                 this.poderesRaca = "Constituição +4, Força +2, Inteligência –2 , Mau Cheiro, Mordida , Reptiliano, Sangue Frio (pg31)";
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + this.raca);
+                this.poderesRaca = " ";
+                break;
         }
     }
 
     protected void setPoderesOrigem() {
-        if (this.raca!="Golen"||this.origem!=null){
+        if (this.raca!="Golen"||this.origem!=" "){
             this.poderesOrigem = "Escolha dois dos seguintes benefícios: ";
             switch ( this.origem ) {
                 case "Acólito":
@@ -506,7 +508,8 @@ public class Personagem {
                     this.poderesOrigem += "Atletismo, Fortitude; Atlético, Esforçado. (pg96)";
                     break;
                 default:
-                    throw new IllegalStateException("Unexpected value: " + this.origem);
+                    this.poderesOrigem += "";
+                    break;
             }
         }else {
             this.poderesOrigem = "Não possui origem";
@@ -515,7 +518,7 @@ public class Personagem {
     }
 
     protected void setPoderesDivindade(){
-        if (this.divindade!= null){
+        if (this.divindade!= " "){
             if (this.classe == "Clerigo"||this.classe == "Paladino"||this.classe == "Druida"){
                 this.poderesDivindade+="Você ganhou todos esses poderes concedidos listados: ";
             }else {
@@ -623,16 +626,26 @@ public class Personagem {
                     this.armaDivindade="Adaga";
                     break;
                 default:
-                    throw new IllegalStateException("Unexpected value: " + this.divindade);
+                    this.poderesDivindade="Não segue a nenhuma divindade.";
+                    this.energiaDivindade=" ";
+                    this.armaDivindade=" ";
+                    break;
             }
         }else {
             this.poderesDivindade="Não segue a nenhuma divindade.";
-            this.energiaDivindade=null;
-            this.armaDivindade=null;
+            this.energiaDivindade=" ";
+            this.armaDivindade=" ";
         }
     }
 
 
+    public String getRaca() {
+        return raca;
+    }
+
+    public void setRaca(String raca) {
+        this.raca = raca;
+    }
 
     public String getNome() {
         return nome;
