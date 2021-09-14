@@ -6,4 +6,280 @@
     android:layout_height="match_parent"
     tools:context=".FichaPersonagemDetalhada">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="410dp"
+        android:layout_height="731dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".FichaPersonagemDetalhada">
+
+        <TextView
+            android:id="@+id/textViewNomeDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textViewRacaDetail"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textViewRacaDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="TextView"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewNomeDetail"
+            app:layout_constraintTop_toTopOf="@+id/textViewNomeDetail" />
+
+        <TextView
+            android:id="@+id/textViewClasseDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewNomeDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewNivelDetail"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/textViewNomeDetail" />
+
+        <TextView
+            android:id="@+id/textViewNivelDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewNomeDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewClasseDetail" />
+
+        <TextView
+            android:id="@+id/textViewOrigemDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewNomeDetail"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRacaDetail" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CAR"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView23"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView27" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CON"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView23"
+            app:layout_constraintEnd_toStartOf="@+id/textView26"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView24" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DES"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView23"
+            app:layout_constraintEnd_toStartOf="@+id/textView25"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView23" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAB"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView23"
+            app:layout_constraintEnd_toStartOf="@+id/textView28"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView26" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="FOR"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView24"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNomeDetail" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INT"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView23"
+            app:layout_constraintEnd_toStartOf="@+id/textView27"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/textViewModDesEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="22sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewModForEditDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewModConEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewModForEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewModIntEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="22sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewModConEditDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewModSabEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewModConEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewModCarEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="22sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewModSabEditDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewModSabEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewModConEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="22sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewModDesEditDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewModIntEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewModDesEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewModSabEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="22sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewModIntEditDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewModCarEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewModIntEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewModForEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="10"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewModDesEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+        <TextView
+            android:id="@+id/textViewForEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="10"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewDesEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewModForEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewDesEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewForEditDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewConEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewForEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewConEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewDesEditDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewIntEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewDesEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewIntEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewForEditDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewSabEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewConEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewSabEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewForEditDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewCarEditDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewIntEditDetail" />
+
+        <TextView
+            android:id="@+id/textViewCarEditDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewForEditDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewSabEditDetail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
