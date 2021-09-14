@@ -20,9 +20,9 @@
             android:id="@+id/textViewNomeDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:text="TextView"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:text="TextView"
             android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/textViewNomeDetail"
@@ -279,6 +279,134 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textViewSabEditDetail" />
+
+        <TextView
+            android:id="@+id/textView74"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pv"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewRacaDetail"
+            app:layout_constraintEnd_toStartOf="@+id/textViewEditPVDetails"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/textViewRacaDetail" />
+
+        <TextView
+            android:id="@+id/textViewEditPmDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView77"
+            app:layout_constraintEnd_toStartOf="@+id/textViewClasseDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView77" />
+
+        <TextView
+            android:id="@+id/textViewEditPVDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView74"
+            app:layout_constraintEnd_toStartOf="@+id/textViewClasseDetail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView74" />
+
+        <TextView
+            android:id="@+id/textView77"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/pm"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewEditPmDetails"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/textViewOrigemDetail"
+            app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewConEditDetail">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView64"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PoderesClasse:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewPoderesClasseEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView65"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Poderes Origem:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewPoderesOrigemEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView67"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Poderes Raça:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewPoderesRaçaEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView70"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Divindade"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewEnergiaDivindadeEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Energia: " />
+
+                <TextView
+                    android:id="@+id/textViewArmaDivindadeEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Arma: " />
+
+                <TextView
+                    android:id="@+id/textViewPorderesDivindadeEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
