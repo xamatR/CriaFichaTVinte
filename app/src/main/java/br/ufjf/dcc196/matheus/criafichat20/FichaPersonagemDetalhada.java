@@ -90,7 +90,8 @@ public class FichaPersonagemDetalhada extends AppCompatActivity {
         textViewPoderesOrigem.setText(extra.getString("poderesOrigem"));
         textViewPoderesClasse.setText(extra.getString("poderesClasse"));
         textViewPoderesRaca.setText(extra.getString("poderesRaca"));
-        if((extra.getString("divindade")!= " ")){
+        String s = extra.getString("divindade");
+        if(extra.getBoolean("temDivindade")){
             textViewDivindade.setText(extra.getString("divindade"));
             textViewPoderesDivindade.setText(extra.getString("poderesDivindade"));
             textViewEnergiaDivindade.setText("Energia: "+extra.getString("energiaDivindade"));

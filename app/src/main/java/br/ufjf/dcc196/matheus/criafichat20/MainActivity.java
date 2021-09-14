@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
         intent.putExtra("poderesOrigem", fichas.get(position).getPoderesOrigem());
         intent.putExtra("poderesDivindade", fichas.get(position).getPoderesDivindade());
         intent.putExtra("energiaDivindade", fichas.get(position).getEnergiaDivindade());
+        intent.putExtra("temDivindade",fichas.get(position).getTemDivindade());
         intent.putExtra("armaDivindade",fichas.get(position).getArmaDivindade());
         startActivity(intent);
     }

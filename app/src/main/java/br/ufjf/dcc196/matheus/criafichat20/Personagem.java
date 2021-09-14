@@ -17,6 +17,7 @@ public class Personagem {
     private int inteligencia;
     private int sabedoria;
     private int carisma;
+    private Boolean temDivindade;
 
     // Modificadores de atributo
     private int modForca;
@@ -423,7 +424,7 @@ public class Personagem {
     }
 
     protected void setPoderesOrigem() {
-        if (this.raca!="Golen"||this.origem!=" "){
+        if (this.raca!="Golen"&&this.origem!=" "){
             this.poderesOrigem = "Escolha dois dos seguintes benefícios: ";
             switch ( this.origem ) {
                 case "Acólito":
@@ -655,13 +656,18 @@ public class Personagem {
                     this.armaDivindade=" ";
                     break;
             }
+            this.temDivindade=true;
         }else {
             this.poderesDivindade=" ";
             this.energiaDivindade=" ";
             this.armaDivindade=" ";
+            this.temDivindade=false;
         }
     }
 
+    public Boolean getTemDivindade(){
+        return temDivindade;
+    }
 
     public String getRaca() {
         return raca;
