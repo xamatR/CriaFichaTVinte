@@ -544,119 +544,119 @@ public class Personagem {
     protected void setPoderesDivindade(){
         if (this.divindade!= " "){
             if (this.classe == "Clerigo"||this.classe == "Paladino"||this.classe == "Druida"){
-                this.poderesDivindade+="Você ganhou todos esses poderes concedidos listados: ";
+                this.poderesDivindade="Você ganhou todos esses poderes concedidos listados: ";
             }else {
-                this.poderesDivindade+="Escolha um dos poderes concedidos listados: ";
+                this.poderesDivindade="Escolha um dos poderes concedidos listados: ";
             }
             switch ( this.divindade ) {
                 case "Aharadak":
-                    this.poderesRaca = "Afinidade com a Tormenta, Percepção Temporal,Rejeição Divina";
+                    this.poderesDivindade+= "Afinidade com a Tormenta, Percepção Temporal,Rejeição Divina";
                     this.energiaDivindade = "Negativa";
                     this.armaDivindade="Corrente de espinhos";
                     break;
                 case "Allihanna":
-                    this.poderesRaca = "Dedo Verde, Descanso Natural, Voz da Natureza";
+                    this.poderesDivindade += "Dedo Verde, Descanso Natural, Voz da Natureza";
                     this.energiaDivindade = "Positiva";
                     this.armaDivindade="Bordão";
                     break;
                 case "Arsenal":
-                    this.poderesRaca = "Conjurar Arma, Coragem Total, Sangue de Ferro\n";
+                    this.poderesDivindade += "Conjurar Arma, Coragem Total, Sangue de Ferro\n";
                     this.energiaDivindade = "Negativa";
                     this.armaDivindade="Martelo de guerra";
                     break;
                 case "Azgher":
-                    this.poderesRaca = "Espada Solar, Habitante do Deserto, Inimigo de Tenebra";
+                    this.poderesDivindade += "Espada Solar, Habitante do Deserto, Inimigo de Tenebra";
                     this.energiaDivindade = "Positiva";
                     this.armaDivindade="Cimitarra";
                     break;
                 case "Hyninn":
-                    this.poderesRaca = "Farsa do Fingidor, Forma de Macaco, Golpista Divino";
+                    this.poderesDivindade += "Farsa do Fingidor, Forma de Macaco, Golpista Divino";
                     this.energiaDivindade = "Qualquer";
                     this.armaDivindade="Adaga";
                     break;
                 case "Kallyadranoch":
-                    this.poderesRaca = "Aura de Medo, Escamas Dracônicas, Servos do Dragão";
+                    this.poderesDivindade += "Aura de Medo, Escamas Dracônicas, Servos do Dragão";
                     this.energiaDivindade = "Negativa";
                     this.armaDivindade="Lança";
                     break;
                 case "Khalmyr ":
-                    this.poderesRaca = "Coragem Total, Dom da Verdade, Espada Justiceira";
+                    this.poderesDivindade += "Coragem Total, Dom da Verdade, Espada Justiceira";
                     this.energiaDivindade = "Positiva";
                     this.armaDivindade="Espada longa";
                     break;
                 case "Lena":
-                    this.poderesRaca = "Ataque Piedoso, Aura Restauradora, Cura Gentil,Curandeira Perfeita";
+                    this.poderesDivindade += "Ataque Piedoso, Aura Restauradora, Cura Gentil,Curandeira Perfeita";
                     this.energiaDivindade = "Positiva";
                     this.armaDivindade=null;
                     break;
                 case "Lin-Wu":
-                    this.poderesRaca = "Coragem Total, Kiai Divino, Mente Vazia";
-                    this.energiaDivindade = "Qualquer";
+                    this.poderesDivindade += "Coragem Total, Kiai Divino, Mente Vazia";
+                    this.poderesDivindade = "Qualquer";
                     this.armaDivindade="Katana";
                     break;
                 case "Marah":
-                    this.poderesRaca = "Aura de Paz, Palavras de Bondade, Talento Artístico";
+                    this.poderesDivindade += "Aura de Paz, Palavras de Bondade, Talento Artístico";
                     this.energiaDivindade = "Positiva";
                     this.armaDivindade=null;
                     break;
                 case "Megalokk":
-                    this.poderesRaca = "Olhar Amedrontador, Urro Divino, Voz dos Monstros";
+                    this.poderesDivindade += "Olhar Amedrontador, Urro Divino, Voz dos Monstros";
                     this.energiaDivindade = "Negativa";
                     this.armaDivindade="Maça";
                     break;
                 case "Nimb":
-                    this.poderesRaca = "Poder Oculto, Sorte dos Loucos, Transmissão da Loucura";
+                    this.poderesDivindade += "Poder Oculto, Sorte dos Loucos, Transmissão da Loucura";
                     this.energiaDivindade = "Qualquer";
                     this.armaDivindade="?";
                     break;
                 case "Oceano":
-                    this.poderesRaca = "Anfíbio, Arsenal das Profundezas, Mestre dos Mares";
+                    this.poderesDivindade += "Anfíbio, Arsenal das Profundezas, Mestre dos Mares";
                     this.energiaDivindade = "Qualquer";
                     this.armaDivindade="Tridente";
                     break;
                 case "Sszzaas":
-                    this.poderesRaca = "Astúcia da Serpente, Presas Venenosas, Sangue Ofídico";
+                    this.poderesDivindade += "Astúcia da Serpente, Presas Venenosas, Sangue Ofídico";
                     this.energiaDivindade = "Negativa";
                     this.armaDivindade="Adaga";
                     break;
                 case "Tanna-Toh":
-                    this.poderesRaca = "Conhecimento Enciclopédico, Mente Analítica,Voz da Civilização";
+                    this.poderesDivindade += "Conhecimento Enciclopédico, Mente Analítica,Voz da Civilização";
                     this.energiaDivindade = "Qualquer";
                     this.armaDivindade="Bordão";
                     break;
                 case "Tenebra":
-                    this.poderesRaca = "Carícia Sombria, Manto da Penumbra, Visão nas Trevas";
+                    this.poderesDivindade += "Carícia Sombria, Manto da Penumbra, Visão nas Trevas";
                     this.energiaDivindade = "Negativa";
                     this.armaDivindade="Adaga";
                     break;
                 case "Thwor":
-                    this.poderesRaca = "Fúria Divina, Olhar Amedrontador, Tropas Duyshidakk";
+                    this.poderesDivindade += "Fúria Divina, Olhar Amedrontador, Tropas Duyshidakk";
                     this.energiaDivindade = "Qualquer";
                     this.armaDivindade="Machado de guerra ";
                     break;
                 case "Thyatis":
-                    this.poderesRaca = "Ataque Piedoso, Dom da Imortalidade,Dom da Profecia, Dom da Ressurreição";
+                    this.poderesDivindade += "Ataque Piedoso, Dom da Imortalidade,Dom da Profecia, Dom da Ressurreição";
                     this.energiaDivindade = "Positiva";
                     this.armaDivindade="Espada longa";
                     break;
                 case "Valkaria":
-                    this.poderesRaca = "Armas da Ambição, Coragem Total, Liberdade Divina";
+                    this.poderesRaca += "Armas da Ambição, Coragem Total, Liberdade Divina";
                     this.energiaDivindade = "Positiva";
                     this.armaDivindade="Mangual";
                     break;
                 case "Wynna":
-                    this.poderesRaca = "Bênção do Mana, Centelha Mágica, Escudo Mágico,Teurgista Místico";
+                    this.poderesDivindade += "Bênção do Mana, Centelha Mágica, Escudo Mágico,Teurgista Místico";
                     this.energiaDivindade = "Positiva";
                     this.armaDivindade="Adaga";
                     break;
                 default:
-                    this.poderesDivindade="Não segue a nenhuma divindade.";
+                    this.poderesDivindade+="Não segue a nenhuma divindade.";
                     this.energiaDivindade=" ";
                     this.armaDivindade=" ";
                     break;
             }
         }else {
-            this.poderesDivindade="Não segue a nenhuma divindade.";
+            this.poderesDivindade=" ";
             this.energiaDivindade=" ";
             this.armaDivindade=" ";
         }
