@@ -62,7 +62,7 @@ public class ContinuacaoCriaPersonagem extends AppCompatActivity {
         buttonTermina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                //if (verificaCampoClasse()&&verificaCampoOrigem()&&verificaCampoRaca()&&verificaCampoDivindade()&&verificaCampoNome()){
+                if (verificaCampoClasse()&&verificaCampoOrigem()&&verificaCampoRaca()&&verificaCampoDivindade()&&verificaCampoNome()){
                     Intent intent3= new Intent(getApplicationContext(),CriaActivity.class);
                     intent3.putExtra("NOME",nomePersonagem.getText().toString());
                     intent3.putExtra("CLASSE",autoCompleteTextViewClasse.getText().toString());
@@ -72,58 +72,57 @@ public class ContinuacaoCriaPersonagem extends AppCompatActivity {
                     setResult(RESULT_OK,intent3);
                     finish();
                 }
-            //}
+            }
         });
     }
 
     public boolean verificaCampoRaca(){
-        for(int i=0 ;raca.length>=i; i++){
-            if (raca[i].lastIndexOf(autoCompleteTextViewRaca.getText().toString())==-1){
-                autoCompleteTextViewRaca.setError("Raça invalida.");
-                return false;
+        for(int i=0 ;raca.length>i; i++){
+            if (raca[i].contains(autoCompleteTextViewRaca.getText().toString())){
+                return true;
             }
         }
-        return true;
+        autoCompleteTextViewRaca.setError("Raça invalida.");
+        return false;
     }
     public boolean verificaCampoClasse(){
-        for(int i=0 ;classe.length>=i; i++){
-            if (classe[i].lastIndexOf(autoCompleteTextViewClasse.getText().toString())==-1){
-                autoCompleteTextViewClasse.setError("Classe invalida.");
-                return false;
+        for(int i=0 ;classe.length>i; i++){
+            if (classe[i].contains(autoCompleteTextViewClasse.getText().toString())){
+                return true;
             }
         }
-        return true;
+        autoCompleteTextViewClasse.setError("Classe invalida.");
+        return false;
     }
 
     public boolean verificaCampoOrigem(){
-        for(int i=0 ;origem.length>=i; i++){
-            if (origem[i].lastIndexOf(autoCompleteTextViewOrigem.getText().toString())==-1){
-                autoCompleteTextViewClasse.setError("Origem invalida.");
-                return false;
+        for(int i=0 ;origem.length>i; i++){
+            if (origem[i].contains(autoCompleteTextViewOrigem.getText().toString())){
+                return true;
             }
         }
-        return true;
+        autoCompleteTextViewOrigem.setError("Origem invalida.");
+        return false;
     }
     public boolean verificaCampoNome(){
         if (nomePersonagem.getText().toString().isEmpty()) {
             nomePersonagem.setError("Este campo é obrigatório");
             return false;
-        }
-        return true;
+        }else
+            return true;
     }
     public boolean verificaCampoDivindade(){
         if(autoCompleteTextViewDivindade.getText().toString().isEmpty()){
             return true;
         }else{
-            for (int i = 0; divindade.length >= i; i++) {
-                if (divindade[i].lastIndexOf(autoCompleteTextViewDivindade.getText().toString()) == -1){
-                    autoCompleteTextViewDivindade.setError("Divindade invalida.");
-                    return false;
+            for (int i = 0; divindade.length > i; i++) {
+                if (divindade[i].contains(autoCompleteTextViewDivindade.getText().toString())){
+                    return true;
                 }
             }
-            return true;
+            autoCompleteTextViewDivindade.setError("Divindade invalida.");
+            return false;
         }
-
     }
 
 }

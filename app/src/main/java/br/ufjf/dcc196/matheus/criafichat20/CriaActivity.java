@@ -60,7 +60,6 @@ public class CriaActivity extends AppCompatActivity {
                             data.putExtra("ORIGEM",data.getExtras().getString("ORIGEM"));
                             data.putExtra("DIVINDADE",data.getExtras().getString("DIVINDADE"));
                             data.putExtra("CLASSE",data.getExtras().getString("CLASSE"));
-
                             setResult(RESULT_OK,data);
                             finish();
                         }
