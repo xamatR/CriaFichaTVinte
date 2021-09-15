@@ -211,9 +211,8 @@ public class CriaActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(), ContinuacaoCriaPersonagem.class);
-                someActivityResultLauncher.launch(intent);
-                setResult(RESULT_OK,intent);
+                Intent intent2 = new Intent(getApplicationContext(), ContinuacaoCriaPersonagem.class);
+                someActivityResultLauncher.launch(intent2);
             }
         });
 
