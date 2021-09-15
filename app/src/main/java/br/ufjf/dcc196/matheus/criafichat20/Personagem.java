@@ -592,7 +592,7 @@ public class Personagem {
                     break;
                 case "Lin-Wu":
                     this.poderesDivindade += "Coragem Total, Kiai Divino, Mente Vazia";
-                    this.poderesDivindade = "Qualquer";
+                    this.energiaDivindade = "Qualquer";
                     this.armaDivindade="Katana";
                     break;
                 case "Marah":
