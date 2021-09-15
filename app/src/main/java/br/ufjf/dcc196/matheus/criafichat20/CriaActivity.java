@@ -1,13 +1,17 @@
 package br.ufjf.dcc196.matheus.criafichat20;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CriaActivity extends AppCompatActivity {
     private Button button;
@@ -36,6 +40,19 @@ public class CriaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cria);
+        //Request da activity
+        ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == ContinuacaoCriaPersonagem.RESULT_OK) {
+                            // There are no request codes
+                            Intent data = result.getData();
+                        }
+                    }
+                }
+        );
         //Numeros que mudam
         textViewNumberFor=findViewById(R.id.textViewNumberFor);
         textViewNumberDes=findViewById(R.id.textViewNumberDes);
@@ -49,17 +66,74 @@ public class CriaActivity extends AppCompatActivity {
         textViewMenosFor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                if(verificaIncremento((int) Float.parseFloat(textViewNumberFor.getText().toString()))){
-                    textViewMudaValor.setText((int)Float.parseFloat(textViewMudaValor.getText().toString())-decrementa((int) Float.parseFloat(textViewNumberFor.getText().toString())));
-                    textViewNumberFor.setText(String.valueOf((int) Float.parseFloat(textViewNumberFor.getText().toString())-1));
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberFor.getText().toString());
+                if(verificaDecremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-decrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberFor.getText().toString()))));
+                    textViewNumberFor.setText(String.valueOf(y-1));
                 }
             }
         });
         textViewMenosDes=findViewById(R.id.textViewMenosDes);
+        textViewMenosFor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberDes.getText().toString());
+                if(verificaDecremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-decrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberDes.getText().toString()))));
+                    textViewNumberDes.setText(String.valueOf(y-1));
+                }
+            }
+        });
         textViewMenosCon=findViewById(R.id.textViewMenosCon);
+        textViewMenosCon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberFor.getText().toString());
+                if(verificaDecremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-decrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberCon.getText().toString()))));
+                    textViewNumberCon.setText(String.valueOf(y-1));
+                }
+            }
+        });
         textViewMenosInt=findViewById(R.id.textViewMenosInt);
+        textViewMenosFor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberInt.getText().toString());
+                if(verificaDecremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-decrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberInt.getText().toString()))));
+                    textViewNumberInt.setText(String.valueOf(y-1));
+                }
+            }
+        });
         textViewMenosSab=findViewById(R.id.textViewMenosSab);
+        textViewMenosSab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberSab.getText().toString());
+                if(verificaDecremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-decrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberSab.getText().toString()))));
+                    textViewNumberFor.setText(String.valueOf(y-1));
+                }
+            }
+        });
         textViewMenosCar=findViewById(R.id.textViewMenosCar);
+        textViewMenosCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberFor.getText().toString());
+                if(verificaDecremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-decrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberCar.getText().toString()))));
+                    textViewNumberCar.setText(String.valueOf(y-1));
+                }
+            }
+        });
         //Soma
         textViewPlusFor=findViewById(R.id.textViewPlusFor);
         textViewPlusFor.setOnClickListener(new View.OnClickListener() {
@@ -68,27 +142,84 @@ public class CriaActivity extends AppCompatActivity {
                 int x= Integer.parseInt(textViewMudaValor.getText().toString());
                 int y= Integer.parseInt(textViewNumberFor.getText().toString());
                 if(verificaIncremento(y)){
-                    textViewMudaValor.setText(String.valueOf(x-incrementa(y)));
+                    textViewMudaValor.setText(String.valueOf((x-incrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberFor.getText().toString()))));
                     textViewNumberFor.setText(String.valueOf(y+1));
                 }
             }
         });
         textViewPlusDes=findViewById(R.id.textViewPlusDes);
+        textViewPlusDes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberDes.getText().toString());
+                if(verificaIncremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-incrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberDes.getText().toString()))));
+                    textViewNumberDes.setText(String.valueOf(y+1));
+                }
+            }
+        });
         textViewPlusCon=findViewById(R.id.textViewPlusCon);
+        textViewPlusCon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberCon.getText().toString());
+                if(verificaIncremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-incrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberCon.getText().toString()))));
+                    textViewNumberCon.setText(String.valueOf(y+1));
+                }
+            }
+        });
         textViewPlusInt=findViewById(R.id.textViewPlusInt);
+        textViewPlusInt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberInt.getText().toString());
+                if(verificaIncremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-incrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberInt.getText().toString()))));
+                    textViewNumberInt.setText(String.valueOf(y+1));
+                }
+            }
+        });
         textViewPlusSab=findViewById(R.id.textViewPlusSab);
+        textViewPlusSab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberSab.getText().toString());
+                if(verificaIncremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-incrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberSab.getText().toString()))));
+                    textViewNumberSab.setText(String.valueOf(y+1));
+                }
+            }
+        });
         textViewPlusCar=findViewById(R.id.textViewPlusCar);
+        textViewPlusCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                int x= Integer.parseInt(textViewMudaValor.getText().toString());
+                int y= Integer.parseInt(textViewNumberCar.getText().toString());
+                if(verificaIncremento(y)){
+                    textViewMudaValor.setText(String.valueOf((x-incrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberCar.getText().toString()))));
+                    textViewNumberCar.setText(String.valueOf(y+1));
+                }
+            }
+        });
         button=findViewById(R.id.buttonAtributosProx);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra("teste","teste");
+                Intent intent = new Intent(getApplicationContext(), ContinuacaoCriaPersonagem.class);
+                someActivityResultLauncher.launch(intent);
                 setResult(RESULT_OK,intent);
-                            }
+            }
         });
 
     }
+
+
     public boolean verificaIncremento(int valor){
         if (valor+1<=18){
             return true;
@@ -107,9 +238,13 @@ public class CriaActivity extends AppCompatActivity {
     }
 
     public int incrementa(int valor){
-        return valorAtributo[valor-8];
+        return valorAtributo[valor-7];
     }
     public int decrementa(int valor){
-            return valorAtributo[valor-8];
+            return valorAtributo[valor-9];
+    }
+
+    public int verificaPontoAtributo(int pontoAtributo){
+        return valorAtributo[pontoAtributo-8];
     }
 }
