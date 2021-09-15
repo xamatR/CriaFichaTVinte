@@ -36,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
                  if (result.getResultCode() == CriaActivity.RESULT_OK) {
                  // There are no request codes
                     Intent data = result.getData();
+                    fichas.add(new Personagem(data.getExtras().getString("NOME"),data.getExtras().getString("CLASSE"),
+                            data.getExtras().getString("RACA"),data.getExtras().getString("ORIGEM"),data.getExtras().getString("DIVINDADE"),
+                            data.getExtras().getInt("FORCA"),data.getExtras().getInt("DESTREZA"),data.getExtras().getInt("CONSTITUICAO"),
+                            data.getExtras().getInt("INTELIGENCIA"),data.getExtras().getInt("SABEDORIA"),data.getExtras().getInt("CARISMA")));
+                    pesonagemAdapter.notifyItemInserted(fichas.size());
                  }
                }
            }

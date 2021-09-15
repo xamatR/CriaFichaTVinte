@@ -49,6 +49,14 @@ public class CriaActivity extends AppCompatActivity {
                         if (result.getResultCode() == ContinuacaoCriaPersonagem.RESULT_OK) {
                             // There are no request codes
                             Intent data = result.getData();
+                            data.putExtra("FORCA",Integer.parseInt(textViewNumberFor.getText().toString()));
+                            data.putExtra("DESTREZA",Integer.parseInt(textViewNumberDes.getText().toString()));
+                            data.putExtra("CONSTIRUICAO",Integer.parseInt(textViewNumberCon.getText().toString()));
+                            data.putExtra("INTELIGENCIA",Integer.parseInt(textViewNumberInt.getText().toString()));
+                            data.putExtra("SABEDORIA",Integer.parseInt(textViewNumberSab.getText().toString()));
+                            data.putExtra("CARISMA",Integer.parseInt(textViewNumberCar.getText().toString()));
+                            setResult(RESULT_OK,data);
+                            finish();
                         }
                     }
                 }
@@ -75,7 +83,7 @@ public class CriaActivity extends AppCompatActivity {
             }
         });
         textViewMenosDes=findViewById(R.id.textViewMenosDes);
-        textViewMenosFor.setOnClickListener(new View.OnClickListener() {
+        textViewMenosDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 int x= Integer.parseInt(textViewMudaValor.getText().toString());
@@ -91,7 +99,7 @@ public class CriaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 int x= Integer.parseInt(textViewMudaValor.getText().toString());
-                int y= Integer.parseInt(textViewNumberFor.getText().toString());
+                int y= Integer.parseInt(textViewNumberCon.getText().toString());
                 if(verificaDecremento(y)){
                     textViewMudaValor.setText(String.valueOf((x-decrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberCon.getText().toString()))));
                     textViewNumberCon.setText(String.valueOf(y-1));
@@ -99,7 +107,7 @@ public class CriaActivity extends AppCompatActivity {
             }
         });
         textViewMenosInt=findViewById(R.id.textViewMenosInt);
-        textViewMenosFor.setOnClickListener(new View.OnClickListener() {
+        textViewMenosDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 int x= Integer.parseInt(textViewMudaValor.getText().toString());
@@ -127,7 +135,7 @@ public class CriaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 int x= Integer.parseInt(textViewMudaValor.getText().toString());
-                int y= Integer.parseInt(textViewNumberFor.getText().toString());
+                int y= Integer.parseInt(textViewNumberCar.getText().toString());
                 if(verificaDecremento(y)){
                     textViewMudaValor.setText(String.valueOf((x-decrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberCar.getText().toString()))));
                     textViewNumberCar.setText(String.valueOf(y-1));
@@ -211,8 +219,14 @@ public class CriaActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Intent intent2 = new Intent(getApplicationContext(), ContinuacaoCriaPersonagem.class);
-                someActivityResultLauncher.launch(intent2);
+                if (Integer.parseInt(textViewMudaValor.getText().toString())==0){
+                    Intent intent2 = new Intent(getApplicationContext(), ContinuacaoCriaPersonagem.class);
+                    someActivityResultLauncher.launch(intent2);
+                }else {
+                    textViewMudaValor.requestFocus();
+                    Toast.makeText(CriaActivity.this, "Você deve zerar seus pontos.", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
