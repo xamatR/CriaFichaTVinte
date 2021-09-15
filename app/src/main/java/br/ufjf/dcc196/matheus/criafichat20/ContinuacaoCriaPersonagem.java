@@ -65,10 +65,10 @@ public class ContinuacaoCriaPersonagem extends AppCompatActivity {
                 //if (verificaCampoClasse()&&verificaCampoOrigem()&&verificaCampoRaca()&&verificaCampoDivindade()&&verificaCampoNome()){
                     Intent intent3= new Intent(getApplicationContext(),CriaActivity.class);
                     intent3.putExtra("NOME",nomePersonagem.getText().toString());
-                    intent3.putExtra("CLASSE",nomePersonagem.getText().toString());
-                    intent3.putExtra("ORIGEM",nomePersonagem.getText().toString());
-                    intent3.putExtra("RACA",nomePersonagem.getText().toString());
-                    intent3.putExtra("DIVINDADE",nomePersonagem.getText().toString());
+                    intent3.putExtra("CLASSE",autoCompleteTextViewClasse.getText().toString());
+                    intent3.putExtra("ORIGEM",autoCompleteTextViewOrigem.getText().toString());
+                    intent3.putExtra("RACA",autoCompleteTextViewRaca.getText().toString());
+                    intent3.putExtra("DIVINDADE",autoCompleteTextViewDivindade.getText().toString());
                     setResult(RESULT_OK,intent3);
                     finish();
                 }

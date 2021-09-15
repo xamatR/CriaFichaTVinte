@@ -55,6 +55,12 @@ public class CriaActivity extends AppCompatActivity {
                             data.putExtra("INTELIGENCIA",Integer.parseInt(textViewNumberInt.getText().toString()));
                             data.putExtra("SABEDORIA",Integer.parseInt(textViewNumberSab.getText().toString()));
                             data.putExtra("CARISMA",Integer.parseInt(textViewNumberCar.getText().toString()));
+                            data.putExtra("NOME",data.getExtras().getString("NOME"));
+                            data.putExtra("RACA",data.getExtras().getString("RACA"));
+                            data.putExtra("ORIGEM",data.getExtras().getString("ORIGEM"));
+                            data.putExtra("DIVINDADE",data.getExtras().getString("DIVINDADE"));
+                            data.putExtra("CLASSE",data.getExtras().getString("CLASSE"));
+
                             setResult(RESULT_OK,data);
                             finish();
                         }
@@ -107,7 +113,7 @@ public class CriaActivity extends AppCompatActivity {
             }
         });
         textViewMenosInt=findViewById(R.id.textViewMenosInt);
-        textViewMenosDes.setOnClickListener(new View.OnClickListener() {
+        textViewMenosInt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 int x= Integer.parseInt(textViewMudaValor.getText().toString());
@@ -126,7 +132,7 @@ public class CriaActivity extends AppCompatActivity {
                 int y= Integer.parseInt(textViewNumberSab.getText().toString());
                 if(verificaDecremento(y)){
                     textViewMudaValor.setText(String.valueOf((x-decrementa(y))+verificaPontoAtributo(Integer.parseInt(textViewNumberSab.getText().toString()))));
-                    textViewNumberFor.setText(String.valueOf(y-1));
+                    textViewNumberSab.setText(String.valueOf(y-1));
                 }
             }
         });
