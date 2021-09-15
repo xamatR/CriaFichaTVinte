@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Nome: "
+        android:text="@string/nome"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Raça: "
+        android:text="@string/ra_a"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/autoCompleteTextViewClasse"
         app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextViewClasse" />
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Origem: "
+        android:text="@string/origem"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/autoCompleteTextViewRaca"
         app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextViewRaca" />
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Divindade: "
+        android:text="@string/divindade"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/autoCompleteTextViewOrigem"
         app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextViewOrigem" />
@@ -106,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Cria"
+        android:text="@string/cria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Classe: "
+        android:text="@string/classe"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/editTextTextNomePersonagem"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextNomePersonagem" />

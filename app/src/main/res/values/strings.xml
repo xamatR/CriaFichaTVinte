@@ -3,4 +3,10 @@
     <string name="barra">|</string>
     <string name="pm">PM:</string>
     <string name="pv">PV:</string>
+    <string name="ra_a">Raça:</string>
+    <string name="nome">Nome:</string>
+    <string name="origem">Origem:</string>
+    <string name="divindade">Divindade:</string>
+    <string name="cria">Cria</string>
+    <string name="classe">Classe:</string>
 </resources>
