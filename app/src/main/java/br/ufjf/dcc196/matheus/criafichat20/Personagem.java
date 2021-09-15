@@ -34,6 +34,7 @@ public class Personagem {
     String poderesDivindade;
     String energiaDivindade;
     String armaDivindade;
+    String periciasClasse;
 
     public String getPoderesClasse() {
         return poderesClasse;
@@ -315,50 +316,112 @@ public class Personagem {
             case "Arcanista Bruxo":
             case "Arcanista Feiriceiro":
                 this.poderesClasse = "Caminho do Arcanista, Magias (pg37)";
+                this.periciasClasse = "Misticismo (Int) e Vontade (Sab),mais 1 a sua escolha entre Conhecimento (Int),Iniciativa (Des), Ofício (Int) e Percepção (Sab).";
                 break;
             case "Barbaro":
                 this.poderesClasse = "Fúria (pg41)";
+                this.periciasClasse = "s. Fortitude (Con) e Luta (For), mais 4a sua escolha entre Adestramento (Car), Atletismo\n" +
+                        "(For), Cavalgar (Des), Iniciativa (Des), Intimidação(Car), Ofício (Int), Percepção (Sab), Pontaria (Des),Sobrevivência (Sab) e Vontade (Sab).";
                 break;
             case "Bardo":
                 this.poderesClasse = "Inspiração, Magias (pg44)";
+                this.periciasClasse = "Atuação (Car) e Reflexos (Des) mais 6 a sua escolha entre Acrobacia (Des), Cavalgar(Des), Conhecimento (Int), Diplomacia (Car), Enganação (Car), Furtividade (Des), Iniciativa (Des),Intuição (Sab), Investigação (Int), Jogatina (Car),Ladinagem (Des), Luta (For), Misticismo (Int),Nobreza (Int), Percepção (Sab), Pontaria (Des),Religião (Sab) e Vontade (Sab).";
                 break;
             case "Bucaneiro":
                 this.poderesClasse = "Audácia, Insolência (pg41)";
+                this.periciasClasse = ". Luta (For) ou Pontaria (Des), Reflexos(Des), mais 4 a sua escolha entre Acrobacia (Des), Atletismo (For), Atuação (Car), Enganação (Car), Fortitude\n" +
+                        "(Con), Furtividade (Des), Iniciativa (Des), Intimidação(Car), Jogatina (Car), Luta (For), Ofício (Int), Percepção(Sab), Pilotagem (Des) e Pontaria (Des).";
                 break;
             case "Caçador":
                 this.poderesClasse = "Marca da presa, Rastreador (pg50)";
+                this.periciasClasse = "Luta (For) ou Pontaria (Des), Sobrevivência (Sab), mais 6 a sua escolha entre Adestramento (Car), Atletismo (For), Cavalgar (Des), Cura" +
+                        "(Sab), Fortitude (Con), Furtividade (Des), Iniciativa" +
+                        "(Des), Investigação (Int), Luta (For), Ofício (Int)," +
+                        "Percepção (Sab), Pontaria (Des) e Reflexos (Des).";
                 break;
             case "Cavaleiro":
                 this.poderesClasse = "Baluarte, Código de honra (pg53)";
+                this.periciasClasse = "Fortitude (Con) e Luta (For), mais 2" +
+                        "a sua escolha entre Adestramento (Car), Atletismo" +
+                        "(For), Cavalgar (Des), Diplomacia (Car), Guerra" +
+                        "(Int), Iniciativa (Des), Intimidação (Car), Nobreza" +
+                        "(Int), Percepção (Sab) e Vontade (Sab).";
                 break;
             case "Clerigo":
                 this.poderesClasse = "Devoto, Magias (pg57)";
+                this.periciasClasse = "Religião (Sab) e Vontade (Sab), mais " +
+                        "2 a sua escolha entre Conhecimento (Int), Cura "+"(Sab), Diplomacia (Car), Fortitude (Con), Iniciativa" + "(Des), Intuição (Sab), Luta (For), Misticismo (Int), "+
+                        "Nobreza (Int), Ofício (Int) e Percepção (Sab).";
                 break;
             case "Druida":
                 this.poderesClasse = "Devoto, Empatia selvagem, Magias (pg62)";
+                this.periciasClasse = "Sobrevivência (Sab) e Vontade (Sab)," +
+                        "mais 4 a sua escolha entre Adestramento (Car)" +
+                        "Atletismo (For), Cavalgar (Des), Conhecimento" +
+                        "(Int), Cura (Sab), Fortitude (Con), Iniciativa (Des)," +
+                        "Intuição (Sab), Luta (For), Misticismo (Int), Ofício" +
+                        "(Int), Percepção (Sab) e Religião (Sab).";
                 break;
             case "Guerreiro":
                 this.poderesClasse = "Ataque especial (pg66)";
+                this.periciasClasse = ". Luta (For) ou Pontaria (Des), Fortitude" +
+                        "(Con), mais 2 a sua escolha entre Adestramento (Car)," +
+                        "Atletismo (For), Cavalgar (Des), Guerra (Int), Iniciativa (Des), Intimidação (Car), Luta (For), Ofício (Int)," +
+                        "Percepção (Sab), Pontaria (Des) e Reflexos (Des).";
                 break;
             case "Inventor":
                 this.poderesClasse = "Engenhosidade, Protótipo (pg68)";
+                this.periciasClasse = "Ofício (Int) e Vontade (Sab), mais" +
+                        "4 a sua escolha entre Conhecimento (Int), Cura" +
+                        "(Sab), Diplomacia (Car), Fortitude (Con), Iniciativa" +
+                        "(Des), Investigação (Int), Luta (For), Misticismo" +
+                        "(Int), Ofício (Int), Pilotagem (Des), Pontaria (Des)" +
+                        "e Percepção (Sab).";
                 break;
             case "Ladino":
                 this.poderesClasse = "Ataque furtivo ,Especialista (pg73)";
+                this.periciasClasse = "Ladinagem (Des) e Reflexos (Des)," +
+                        "mais 8 a sua escolha entre Acrobacia (Des), Atletismo" +
+                        "(For), Atuação (Car), Cavalgar (Des), Conhecimento" +
+                        "(Int), Diplomacia (Car), Enganação (Car), Furtividade (Des), Iniciativa (Des), Intimidação (Car),\n" +
+                        "Intuição (Sab), Investigação (Int), Jogatina (Car)," +
+                        "Luta (For), Ofício (Int), Percepção (Sab), Pilotagem" +
+                        "(Des) e Pontaria (Des).";
                 break;
             case "Lutador":
                 this.poderesClasse = "Briga, Golpe relâmpago (pg76)";
+                this.periciasClasse = "Fortitude (Con) e Luta (For), mais 4" +
+                        "a sua escolha entre Acrobacia (Des), Adestramento" +
+                        "(Car), Atletismo (For), Enganação (Car), Furtividade" +
+                        "(Des), Iniciativa (Des), Intimidação (Car), Ofício (Int)," +
+                        "Percepção (Sab), Pontaria (Des) e Reflexos (Des).";
                 break;
             case "Nobre":
                 this.poderesClasse = "Autoconfiança, Espólio, Orgulho (pg79)";
+                this.periciasClasse = "Diplomacia (Car) ou Intimidação" +
+                        "(Car), Vontade (Sab), mais 4 a sua escolha entre" +
+                        "Adestramento (Car), Atuação (Car), Cavalgar (Des)," +
+                        "Conhecimento (Int), Diplomacia (Car), Enganação" +
+                        "(Car), Fortitude (Con), Guerra (Int), Iniciativa (Des)," +
+                        "Intimidação (Car), Intuição (Sab), Investigação (Int)," +
+                        "Jogatina (Car), Luta (For), Nobreza (Int), Ofício (Int)," +
+                        "Percepção (Sab) e Pontaria (Des).";
                 break;
             case "Paladino":
                 this.poderesClasse = "Abençoado, código do herói,golpe divino (pg82)";
+                this.periciasClasse = "Luta (For) e Vontade (Sab) mais 2" +
+                        "a sua escolha entre Adestramento (Car), Atletismo" +
+                        "(For), Cavalgar (Des), Cura (Sab), Diplomacia (Car)," +
+                        "Fortitude (Con), Guerra (Int), Iniciativa (Des), Intuição (Sab), Nobreza (Int), Percepção (Sab) e Religião (Sab).";
                 break;
             default:
                 this.poderesClasse = " ";
                 break;
         }
+    }
+
+    public String getPericiasClasse(){
+        return periciasClasse;
     }
 
     protected void setPoderesRaca(){

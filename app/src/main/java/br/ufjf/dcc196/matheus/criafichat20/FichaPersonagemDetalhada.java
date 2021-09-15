@@ -33,7 +33,8 @@ public class FichaPersonagemDetalhada extends AppCompatActivity {
     private TextView textViewPoderesDivindade;
     private TextView textViewEnergiaDivindade;
     private TextView textViewArmaDivindade;
-    private TextView getTextViewNivel;
+    private TextView textViewPericias;
+    private TextView textViewPericiasAdicionais;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,8 @@ public class FichaPersonagemDetalhada extends AppCompatActivity {
         textViewEnergiaDivindade=findViewById(R.id.textViewEnergiaDivindadeEdit);
         textViewArmaDivindade=findViewById(R.id.textViewArmaDivindadeEdit);
         textViewPoderesOrigem=findViewById(R.id.textViewPoderesOrigemEdit);
+        textViewPericias=findViewById(R.id.textViewPericias);
+        textViewPericiasAdicionais=findViewById(R.id.textViewPericiasAdicionais);
 
         textViewNome.setText(extra.getString("nome"));
         textViewClasse.setText(extra.getString("classe")+":");
@@ -90,6 +93,8 @@ public class FichaPersonagemDetalhada extends AppCompatActivity {
         textViewPoderesOrigem.setText(extra.getString("poderesOrigem"));
         textViewPoderesClasse.setText(extra.getString("poderesClasse"));
         textViewPoderesRaca.setText(extra.getString("poderesRaca"));
+        textViewPericias.setText(extra.getString("pericias"));
+        textViewPericiasAdicionais.setText("Você recebe um número de perícias treinadas acionais igual " +extra.get("modInteligencia") +". Essas perícias não precisam ser da sua classe.");
         String s = extra.getString("divindade");
         if(extra.getBoolean("temDivindade")){
             textViewDivindade.setText(extra.getString("divindade"));
