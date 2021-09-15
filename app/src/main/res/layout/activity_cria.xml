@@ -7,7 +7,7 @@
     tools:context=".CriaActivity">
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/textViewPlusCon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -42,7 +42,7 @@
         android:text="10"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
-        app:layout_constraintEnd_toStartOf="@+id/textView39"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPlusSab"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewMenosSab" />
 
@@ -161,7 +161,7 @@
         android:text="10"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
-        app:layout_constraintEnd_toStartOf="@+id/textView35"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPlusCon"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewMenosCon" />
 
@@ -296,7 +296,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView6" />
 
     <TextView
-        android:id="@+id/textView39"
+        android:id="@+id/textViewPlusSab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -362,11 +362,11 @@
         app:layout_constraintStart_toEndOf="@+id/textViewMudaValor" />
 
     <Button
-        android:id="@+id/button21"
+        android:id="@+id/buttonAtributosProx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Raça"
+        android:text="Proximo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
