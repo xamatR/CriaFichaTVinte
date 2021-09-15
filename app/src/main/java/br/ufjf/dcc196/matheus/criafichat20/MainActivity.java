@@ -1,5 +1,9 @@
 package br.ufjf.dcc196.matheus.criafichat20;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +28,18 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
+           new ActivityResultContracts.StartActivityForResult(),
+           new ActivityResultCallback<ActivityResult>() {
+               @Override
+               public void onActivityResult(ActivityResult result) {
+                 if (result.getResultCode() == CriaActivity.RESULT_OK) {
+                 // There are no request codes
+                    Intent data = result.getData();
+                 }
+               }
+           }
+        );
         fichas= new ArrayList<Personagem>(){{
             add(new Personagem("Luna","Clerigo","Humano","Acólito","Tenebra",12,8,14,16,18,16));
             add(new Personagem("T.E.S.L.A.","Barbaro","Golem"," "," ",20,14,16,8,8,10));
@@ -33,6 +50,14 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
         pesonagemAdapter= new PersonagemAdapter(fichas,this);
         recyclerViewFichas.setAdapter(pesonagemAdapter);
         buttonCria=findViewById(R.id.buttonCria);
+        buttonCria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getApplicationContext(), CriaActivity.class);
+                someActivityResultLauncher.launch(intent);
+            }
+        });
+
     }
 
     @Override
