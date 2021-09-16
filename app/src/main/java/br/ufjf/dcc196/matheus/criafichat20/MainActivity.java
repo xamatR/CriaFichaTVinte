@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
             "Guarda","Herdeiro","Herói Camponês","Marujo","Membro de Guilda","Mercador","Minerador",
             "Pivete","Refugiado","Seguidor","Selvagem","Soldado","Taverneiro","Trabalhador"};
 
+    private static final String[] divindade = new String[] { "Aharadak","Allihanna", "Arsenal", "Azgher", "Hyninn", "Kallyadranoch","Khalmyr","Lena","Lin-Wu"
+            ,"Marah","Megalokk","Nimb", "Sszzaas","Tanna-Toh","Tenebra","Thwor","Valkaria","Wynna" };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,10 +67,15 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
         );
         buttonDescrição=findViewById(R.id.buttonDescrição);
         fichas= new ArrayList<Personagem>(){{
-            add(new Personagem("Luna","Clerigo","Humano","Acólito","Tenebra",12,8,14,16,18,16));
-            add(new Personagem("T.E.S.L.A.","Barbaro","Golem"," "," ",20,14,16,8,8,10));
+            add(new Personagem("Luna","Clerigo","Humano","Acólito","Tenebra",12,8,14,14,16,14));
+            add(new Personagem("Adedanha?","Barbaro","Golem"," "," ",20,14,16,8,8,10));
             add(new Personagem("Boteko","Cavaleiro","Humano","Nômade"," ",18,12,14,12,12,12));
             add(new Personagem("Furry","Bucaneiro","Qareen","Nômade"," ", 11,14,11,18,11,13));
+            add(new Personagem("Pisquei Morri","Ladino", "Goblin", "Pivete", "Hynne",10,16,14,10,12,12));
+            add(new Personagem("Traqkinas","Nobre","Humano","Herdeiro","Sszzaas",12,8,14,14,14,16));
+            //add(new Personagem("Pouca Telha","Paladino","Humano","Acólito",))
+            add(new Personagem("Lil Nas X","Guerreiro","Humano","Nômade"," ",16,15,14,12,12,8));
+            add(new Personagem("Beta Nórdico","Guerreiro","Trog","Membro de Guilda"," ",16,12,14,10,12,8));
         }};
         recyclerViewFichas = findViewById(R.id.recyclerViewFichas);
         layoutManager = new LinearLayoutManager(this);

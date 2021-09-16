@@ -113,6 +113,7 @@ public class ContinuacaoCriaPersonagem extends AppCompatActivity {
     }
     public boolean verificaCampoDivindade(){
         if(autoCompleteTextViewDivindade.getText().toString().isEmpty()){
+            autoCompleteTextViewDivindade.setText(" ");
             return true;
         }else{
             for (int i = 0; divindade.length > i; i++) {
