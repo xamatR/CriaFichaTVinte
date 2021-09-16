@@ -28,6 +28,18 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
     private Button buttonDescrição;
     private ItemTouchHelper.SimpleCallback touchHelperCallBack;
 
+    private static final String[] raca = new String[] { "Humano","Anão", "Dahllan", "Italy", "Goblin", "Lefou","Minotauro","Qareen","Golem","Hynne","Kliren",
+            "Medusa", "Osteon","Sereia/tritão","Sílfide","Aggelus","Sulfure","Trog" };
+
+    private static final String[] classe= new String[]{"Arcanista Mago","Arcanista Bruxo","Arcanista Feiriceiro","Barbaro","Bardo","Bucaneiro","Caçador","Cavaleiro",
+            "Clerigo","Druida","Guerreiro","Inventor","Ladino","Lutador","Nobre","Paladino"};
+
+    private static final String[] origem = new String[]{"Acólito","Amigo dos Animais","Bardo","Amnésico","Aristocrata","Artesão",
+            "Artista","Assistente de Laboratório","Batedor","Capanga","Charlatão","Circense","Criminoso","Curandeiro","Eremita",
+            "Escravo","Estudioso","Fazendeiro","Forasteiro","Gladiador",
+            "Guarda","Herdeiro","Herói Camponês","Marujo","Membro de Guilda","Mercador","Minerador",
+            "Pivete","Refugiado","Seguidor","Selvagem","Soldado","Taverneiro","Trabalhador"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
         fichas= new ArrayList<Personagem>(){{
             add(new Personagem("Luna","Clerigo","Humano","Acólito","Tenebra",12,8,14,16,18,16));
             add(new Personagem("T.E.S.L.A.","Barbaro","Golem"," "," ",20,14,16,8,8,10));
+            add(new Personagem("Boteko","Cavaleiro","Humano","Nômade"," ",18,12,14,12,12,12));
+            add(new Personagem("Furry","Bucaneiro","Qareen","Nômade"," ", 11,14,11,18,11,13));
         }};
         recyclerViewFichas = findViewById(R.id.recyclerViewFichas);
         layoutManager = new LinearLayoutManager(this);

@@ -255,6 +255,7 @@ public class Personagem {
                 this.pontosvida = 0;
         }
     }
+
     protected void calculaManaInicial(){
         switch (this.classe){
             case "Arcanista Mago":
