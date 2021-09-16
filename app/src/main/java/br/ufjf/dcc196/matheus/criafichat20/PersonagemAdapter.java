@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.BreakIterator;
 import java.util.List;
 
 public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.PersonagemViewHolder>{
@@ -40,6 +41,9 @@ public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.Pe
         holder.textViewDivindade.setText(fichas.get(position).getDivindade());
         holder.textViewPvEdit.setText(String.valueOf(fichas.get(position).getPontosvida()));
         holder.textViewPmEdit.setText(String.valueOf(fichas.get(position).getPontosMana()));
+        if(fichas.get(position).getDivindade()==""||fichas.get(position).getDivindade()==" "){
+            holder.textView13.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -57,6 +61,7 @@ public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.Pe
         private TextView textViewPvEdit;
         private TextView textViewPmEdit;
         private TextView textViewNome;
+        private TextView textView13;
 
         public PersonagemViewHolder(View itemView) {
             super(itemView);
@@ -68,6 +73,8 @@ public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.Pe
             textViewDivindade = itemView.findViewById(R.id.textViewDivindade);
             textViewPvEdit = itemView.findViewById(R.id.textViewPvEdit);
             textViewPmEdit = itemView.findViewById(R.id.textViewPmEdit);
+            textView13 = itemView.findViewById(R.id.textView13);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v){
