@@ -4,7 +4,9 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
     private List<Personagem> fichas;
     private LinearLayoutManager layoutManager;
     private PersonagemAdapter pesonagemAdapter;
+    private Button buttonDescrição;
+    private ItemTouchHelper.SimpleCallback touchHelperCallBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
                }
            }
         );
+        buttonDescrição=findViewById(R.id.buttonDescrição);
         fichas= new ArrayList<Personagem>(){{
             add(new Personagem("Luna","Clerigo","Humano","Acólito","Tenebra",12,8,14,16,18,16));
             add(new Personagem("T.E.S.L.A.","Barbaro","Golem"," "," ",20,14,16,8,8,10));
@@ -63,6 +68,26 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
                 someActivityResultLauncher.launch(intent);
             }
         });
+        buttonDescrição.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+            Intent nIntent= new Intent(getApplicationContext(),ActivityDescricao.class);
+            startActivity(nIntent);
+            }
+        });
+        touchHelperCallBack = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.ACTION_STATE_IDLE, ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                fichas.remove(viewHolder.getAdapterPosition());
+                pesonagemAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+            }
+        };
+        new ItemTouchHelper(touchHelperCallBack).attachToRecyclerView(recyclerViewFichas);
 
     }
 

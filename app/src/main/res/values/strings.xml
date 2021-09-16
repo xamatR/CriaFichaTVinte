@@ -9,4 +9,6 @@
     <string name="divindade">Divindade:</string>
     <string name="cria">Cria</string>
     <string name="classe">Classe:</string>
+    <string name="criar_ficha">Criar ficha</string>
+    <string name="descri_oproblema">Descrição Problema</string>
 </resources>

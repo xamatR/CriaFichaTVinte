@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.ufjf.dcc196.matheus.criafichat20">
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CriaFichaT20">
-        <activity android:name=".ContinuacaoCriaPersonagem"></activity>
+        <activity android:name=".ActivityDescricao"></activity>
+        <activity android:name=".ContinuacaoCriaPersonagem" />
         <activity android:name=".CriaActivity" />
         <activity android:name=".FichaPersonagemDetalhada" />
         <activity android:name=".MainActivity">
