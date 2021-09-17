@@ -5,11 +5,13 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -90,8 +92,21 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                fichas.remove(viewHolder.getAdapterPosition());
-                pesonagemAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                builder.setTitle("Exvluir").setMessage("Deseja excluir a ficha do personagem " + fichas.get(viewHolder.getAdapterPosition()).getNome() + "?")
+                        .setPositiveButton("sim", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which){
+                                fichas.remove(viewHolder.getAdapterPosition());
+                                pesonagemAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+                            }
+                        })
+                        .setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which){
+                                pesonagemAdapter.notifyItemChanged(viewHolder.getAdapterPosition());
+                            }
+                        });
             }
         };
         new ItemTouchHelper(touchHelperCallBack).attachToRecyclerView(recyclerViewFichas);
