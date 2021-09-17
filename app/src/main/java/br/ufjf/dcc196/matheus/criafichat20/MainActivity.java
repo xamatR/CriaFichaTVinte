@@ -28,21 +28,6 @@ public class MainActivity extends AppCompatActivity implements PersonagemAdapter
     private Button buttonDescrição;
     private ItemTouchHelper.SimpleCallback touchHelperCallBack;
 
-    private static final String[] raca = new String[] { "Humano","Anão", "Dahllan", "Italy", "Goblin", "Lefou","Minotauro","Qareen","Golem","Hynne","Kliren",
-            "Medusa", "Osteon","Sereia/tritão","Sílfide","Aggelus","Sulfure","Trog" };
-
-    private static final String[] classe= new String[]{"Arcanista Mago","Arcanista Bruxo","Arcanista Feiriceiro","Barbaro","Bardo","Bucaneiro","Caçador","Cavaleiro",
-            "Clerigo","Druida","Guerreiro","Inventor","Ladino","Lutador","Nobre","Paladino"};
-
-    private static final String[] origem = new String[]{"Acólito","Amigo dos Animais","Bardo","Amnésico","Aristocrata","Artesão",
-            "Artista","Assistente de Laboratório","Batedor","Capanga","Charlatão","Circense","Criminoso","Curandeiro","Eremita",
-            "Escravo","Estudioso","Fazendeiro","Forasteiro","Gladiador",
-            "Guarda","Herdeiro","Herói Camponês","Marujo","Membro de Guilda","Mercador","Minerador",
-            "Pivete","Refugiado","Seguidor","Selvagem","Soldado","Taverneiro","Trabalhador"};
-
-    private static final String[] divindade = new String[] { "Aharadak","Allihanna", "Arsenal", "Azgher", "Hyninn", "Kallyadranoch","Khalmyr","Lena","Lin-Wu"
-            ,"Marah","Megalokk","Nimb", "Sszzaas","Tanna-Toh","Tenebra","Thwor","Valkaria","Wynna" };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
