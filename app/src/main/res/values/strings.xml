@@ -14,4 +14,18 @@
     <string name="descircao">        O aplicativo e capaz de criar uma ficha de personagem completa (mas ainda e preciso seguir o livro de regras). Incialmente o aplicativo carrega uma lista de fichas pré-prontas para o usuário ter uma noção maior de qual personagem ele deseja criar, na tela inicial e possível apertar em uma dessas fichas pré-prontas para ter mais detalhes sobre elas sendo assim iniciando uma nova tela com os detalhes da ficha selecionada, ou arrastar o componente a direita para removelo. Assim que o usuário decide criar a sua própria ficha ele pode voltar para tela inicial e apertar no botão CRIAR FICHA, que eleva ele a uma nova tela que ele pode escolher os atributos do personagem que são calculados automaticamente quando ele aperta no “- “ou no “+”, para diminuir ou aumentar respectivamente. O motivo de usar TextView como botões por causa que os botões não ficavam agradáveis na tela sendo que tinham que ser pequenos e deixava o texto dentro delas muito ilegível. Depois de alocar os atributos correntemente o usuário pode ir para a próxima tela, se caso ele não use todos os pontos ou use mais pontos que o disponível ele recebe um Toast indicando que ele deve zerar o valor. Na tela seguinte ele tem que preencher cinco campos referente ao nome do personagem que deve ter no mínimo um caráter, classe do personagem que deve ser uma das opções validas que ficam disponível para completar automaticamente, raça do personagem que deve ser uma das opções validas que ficam disponível para completar automaticamente, origem do personagem que deve ser uma das opções validas que ficam disponível para completar automaticamente, e a divindade se ele desejar que deve ser uma das opções validas que ficam disponível para completar automaticamente. Depois disso ele pode apertar no botão CRIA para adicionar a ficha dele na última posição.
 
     </string>
+    <string name="_10">10</string>
+    <string name="mais">+</string>
+    <string name="constitui_o">Constituição</string>
+    <string name="_20">/20</string>
+    <string name="proximo">Proximo</string>
+    <string name="menos">-</string>
+    <string name="destreza">Destreza</string>
+    <string name="carisma">Carisma</string>
+    <string name="intelig_ncia">Inteligência</string>
+    <string name="sabedoria">Sabedoria</string>
+    <string name="for_a">Força</string>
+    <string name="escolha_os_atibutos">Escolha os atibutos:</string>
+    <string name="proximo">Proximo</string>
+    <string name="_20sembarra">20</string>
 </resources>
