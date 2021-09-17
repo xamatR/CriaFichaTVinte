@@ -51,7 +51,7 @@ public class CriaActivity extends AppCompatActivity {
                             Intent data = result.getData();
                             data.putExtra("FORCA",Integer.parseInt(textViewNumberFor.getText().toString()));
                             data.putExtra("DESTREZA",Integer.parseInt(textViewNumberDes.getText().toString()));
-                            data.putExtra("CONSTIRUICAO",Integer.parseInt(textViewNumberCon.getText().toString()));
+                            data.putExtra("CONSTITUICAO",Integer.parseInt(textViewNumberCon.getText().toString()));
                             data.putExtra("INTELIGENCIA",Integer.parseInt(textViewNumberInt.getText().toString()));
                             data.putExtra("SABEDORIA",Integer.parseInt(textViewNumberSab.getText().toString()));
                             data.putExtra("CARISMA",Integer.parseInt(textViewNumberCar.getText().toString()));
