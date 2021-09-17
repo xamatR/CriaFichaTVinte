@@ -15,11 +15,11 @@
 
     </string>
     <string name="_10">10</string>
-    <string name="mais"> +  </string>
+    <string name="mais">+ </string>
     <string name="constitui_o">Constituição</string>
     <string name="_20">/20</string>
     <string name="proximo">Proximo</string>
-    <string name="menos">-  </string>
+    <string name="menos">- </string>
     <string name="destreza">Destreza</string>
     <string name="carisma">Carisma</string>
     <string name="intelig_ncia">Inteligência</string>
